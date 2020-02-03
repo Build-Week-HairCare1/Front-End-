@@ -3,7 +3,10 @@ import StylistList from './StylistList'
 
 function CustomerHome() {
   return (
+    <>
+    <h1>Customer Home</h1>
     <StylistList/>
+    </>
   )   
 }
 
