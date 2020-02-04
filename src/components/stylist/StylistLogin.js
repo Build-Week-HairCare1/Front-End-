@@ -5,11 +5,11 @@ import * as Yup from 'yup';
 
  
 const Btn = styled.button`
-color: rgba(116, 58, 98, 7);
+color: rgba(116, 58, 98, .7);
 border: double 4px azure;
 background-color:azure;
 padding:5px 10px;
-font-size:2.5rem;
+font-size:3rem;
 text-shadow:0 0 10px azure;
 -webkit-text-stroke:.8px azure;
 cursor:pointer;

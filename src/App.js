@@ -9,6 +9,7 @@ import Logout from "./components/Logout";
 import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
 import Login from './components/Login'
+import SignUp from './components/SignUp'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <Header />
       <Logout /> */}
       <Login />
+      <SignUp />
       {/* Private Route */}
 
       {/* <StylistHome />
