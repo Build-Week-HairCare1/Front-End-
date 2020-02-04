@@ -30,7 +30,7 @@ const Customer = ({values,errors,touched,status}) =>{
 
 
 
-    return(
+    return( 
             
              <Form className='formStyle'>
              <h2>Customer</h2>
