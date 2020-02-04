@@ -12,7 +12,7 @@ const Dashboard = () => {
       <DashboardHeader />
 
       <Switch>
-        <Route path="/customer/home/dashboard" component={DashboardContent} />
+        <Route path="/customer/home/" component={DashboardContent} />
         <Route path="/customer/home/search" component={Search} />
       </Switch>
     </div>
