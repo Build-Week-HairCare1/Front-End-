@@ -4,36 +4,76 @@ import styled from 'styled-components';
 import * as Yup from 'yup';
 
  
+
+
+
+
+let stylist = {
+    id: 0,
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    city: '',
+    state: '',
+    specialty: '',
+    salon: '',
+    years_experience: 0,
+    photo_url: '',
+    bio: '',
+    facebook_url: '',
+    instagram_url: '',
+    twitter_url: '',
+    reviews: [
+      {
+        title: '',
+        description: '',
+        stars: 0,
+        stylist: '',
+        customer: '',
+        photo_url: '',
+      },
+    ],
+  };
+
+
+
+
+
 const Btn = styled.button`
-color: rgba(116, 58, 98, .7);
-border: double 4px azure;
-background-color:azure;
-padding:5px 10px;
-font-size:3rem;
-text-shadow:0 0 10px azure;
--webkit-text-stroke:.8px azure;
-cursor:pointer;
-width:200px;
-border-radius:10px;
-font-weight:bolder;
-font-family: 'Russo One', sans-serif;
-font-family: 'Dancing Script', cursive;
-border:double rgba(116, 58, 98, 0.7);
+flex: 0.6;
+	color:#fff;
+    font-weight:bolder;
+    width:100%;
+    border:none;
+    border-radius:10px;
+    background-color: #000;
+	padding:10px;
+	font-size:3rem;
+	-webkit-text-stroke:.8px whitesmoke;
+    cursor:pointer;
+    transition:.5s ease-in;
+
+
 `
  
 
+const Row = styled.div`
+flex:1;
+display:flex;
+flex-direction:row;
+`;
 
 
    
 const MatchMe = (e) =>{
     let wordSoFar = e.target.value
-    console.log(e.target.parentNode.parentNode.children[4].children[1]);
     
         
-    if(wordSoFar===e.target.parentNode.parentNode.children[4].children[1].value){
-        e.target.parentNode.children[2].innerHTML = "Matches"
+    if(wordSoFar===e.target.parentNode.parentNode.children[0].children[0].value){
+        e.target.parentNode.children[1].innerHTML = "Matches"
     }else{
-        e.target.parentNode.children[2].innerHTML = "not Matching"
+        e.target.parentNode.children[1].innerHTML = "not Matching"
     }
 }
 
@@ -66,10 +106,12 @@ const Stylist = ({values,errors,touched,status}) =>{
     return(
             
             <Form className="formSignUp">
-                <h2>Stylist</h2>
+                <h3>Stylist</h3>
 
-                <label htmlFor="name"> First Name <br />
-            <Field as="input" id="name" type="text" maxLength="10" name="name" required/>
+
+                <Row>
+<label htmlFor="name"> 
+            <Field as="input" id="name" type="text" maxLength="10" name="name" placeholder="First Name" required/>
             {
                 touched.name && errors.name &&(
                 <p>{errors.name}</p>
@@ -77,16 +119,18 @@ const Stylist = ({values,errors,touched,status}) =>{
             }
         </label>
 
-        <label htmlFor="last">Last Name <br />
-            <Field as="input" id="last" type="text" maxLength="10" name="last" required/>
+        <label htmlFor="last"> 
+            <Field as="input" id="last" type="text" maxLength="10" name="last"  placeholder="Last Name"required/>
             {
                 touched.last && errors.last &&(
                 <p>{errors.last}</p>
                 )
             }
         </label>
-        <label htmlFor="email">Email <br />
-            <Field as="input" id="email" type="email" name="email" className='inp' required/>
+                </Row>
+                
+        <label htmlFor="email"> 
+            <Field as="input" id="email" type="email" name="email"  placeholder="Example@email.com"required/>
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
@@ -94,16 +138,61 @@ const Stylist = ({values,errors,touched,status}) =>{
             }
             <span></span>
         </label>
-        <label htmlFor="password">Password <br />
-            <Field as="input" id="password" type="password" name="password"  className='inp' required/>
+
+        <Row>
+     <label htmlFor="city"> 
+            <Field as="input" id="city" type="text" maxLength="14" name="city"  placeholder="City" required/>
+           
+        </label>
+
+        <label htmlFor="state"> 
+            <Field as="input" id="state" type="text" maxLength="10" name="state"  placeholder="State" required/>
+          
+        </label>
+</Row> 
+
+            <Row>
+            <label htmlFor="salon"> 
+            <Field as="input" id="salon" type="text" maxLength="10" name="salon"  placeholder="Salon" required/>
+            {
+                touched.salon && errors.salon &&(
+                <p>{errors.salon}</p>
+                )
+            }
+        </label>
+
+        <label htmlFor="specialty"> 
+            <Field as="input" id="specialty" type="text" maxLength="10" name="specialty"  placeholder="Specialty" required/>
+            {
+                touched.specialty && errors.specialty &&(
+                <p>{errors.specialty}</p>
+                )
+            }
+        </label>
+        
+            </Row>
+            
+            <Row>
+            <label htmlFor="yrs">Yrs experience<br />
+            <Field as="input" id="yrs" type="number" min="0" max="10" name="yrs" placeholder="0" required/>
+            {
+                touched.yrs && errors.yrs &&(
+                <p>{errors.yrs}</p>
+                )
+            }
+        </label>
+                </Row>
+        <Row>
+  <label htmlFor="password">  
+            <Field as="input" id="password" type="password" name="password"  className='inp' placeholder="Password" required/>
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
                 )
             }
         </label>
-     <label htmlFor="repassword">Re-Type Password <br />
-            <Field as="input" id="repassword" type="password" name="repassword" onChange={MatchMe} required/>
+     <label htmlFor="repassword"> 
+            <Field as="input" id="repassword" type="password" name="repassword" onChange={MatchMe} placeholder="Re-Type Password " required/>
             {
                 touched.repassword && errors.repassword &&(
                 <p>{errors.repassword}</p>
@@ -111,6 +200,8 @@ const Stylist = ({values,errors,touched,status}) =>{
             }
             <span></span>
         </label>
+        </Row>
+      
         <div className="btnBox">
             <Btn type='submit'>Register</Btn>
         </div>
@@ -168,6 +259,10 @@ const StylistSignUp = withFormik({
         
 //wait for team...whether axios or what and also where to an with what?
 //token to be accepted as a stylist account
+
+console.log(values);
+
+
     }
 
 

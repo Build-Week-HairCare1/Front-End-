@@ -2,32 +2,58 @@ import React from 'react';
 import {withFormik,Form,Field} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
+import axios from 'axios';
 
+
+
+let customer = {
+    id: 0,
+    first_name: '',
+    last_name: '',
+    email: '',
+    city: '',
+    state: '',
+    reviews: [
+      {
+        title: '',
+        description: '',
+        stars: 0,
+        stylist: '',
+        customer: '',
+        photo_url: '',
+      },
+    ],
+  };
  
 const Btn = styled.button`
-color: rgba(116, 58, 98, .7);
-border: double 4px azure;
-background-color:azure;
-padding:5px 10px;
-font-size:3rem;
-text-shadow:0 0 10px azure;
--webkit-text-stroke:.8px azure;
-cursor:pointer;
-width:200px;
-border-radius:10px;
-font-weight:bolder;
-font-family: 'Russo One', sans-serif;
-font-family: 'Dancing Script', cursive;
-border:double rgba(116, 58, 98, 0.7);
+flex: 0.6;
+	color:#fff;
+    font-weight:bolder;
+    width:100%;
+    border:none;
+    border-radius:10px;
+    background-color: #000;
+	padding:10px;
+	font-size:3rem;
+	-webkit-text-stroke:.8px whitesmoke;
+    cursor:pointer;
+    transition:.5s ease-in;
+
+
 `
+
+const Row = styled.div`
+flex:1;
+display:flex;
+flex-direction:row;
+`;
 
 
 const MatchMe = (e) =>{
     let wordSoFar = e.target.value
-    console.log(e.target.parentNode.parentNode.children[4].children[1]);
     
         
-    if(wordSoFar===e.target.parentNode.parentNode.children[4].children[1].value){
+    if(wordSoFar===e.target.parentNode.parentNode.children[0].children[1].value){
         e.target.parentNode.children[2].innerHTML = "Matches"
     }else{
         e.target.parentNode.children[2].innerHTML = "not Matching"
@@ -64,7 +90,9 @@ const Customer = ({values,errors,touched,status}) =>{
     return(
             
             <Form className="formSignUp">
-                <h2>Customer</h2>
+                <h3>Customer</h3>
+
+                <Row>
 
                 <label htmlFor="name"> First Name <br />
             <Field as="input" id="name" type="text" maxLength="10" name="name" required/>
@@ -83,6 +111,8 @@ const Customer = ({values,errors,touched,status}) =>{
                 )
             }
         </label>
+                </Row>
+
         <label htmlFor="email">Email <br />
             <Field as="input" id="email" type="email" name="email" className='inp' required/>
             {
@@ -92,7 +122,21 @@ const Customer = ({values,errors,touched,status}) =>{
             }
             <span></span>
         </label>
-        <label htmlFor="password">Password <br />
+
+<Row>
+     <label htmlFor="city">City<br />
+            <Field as="input" id="city" type="text" maxLength="14" name="city" required/>
+           
+        </label>
+
+        <label htmlFor="state">State<br />
+            <Field as="input" id="state" type="text" maxLength="10" name="state" required/>
+          
+        </label>
+</Row>
+       
+       <Row>
+            <label htmlFor="password">Password <br />
             <Field as="input" id="password" type="password" name="password"  className='inp' required/>
             {
                 touched.password && errors.password &&(
@@ -101,7 +145,7 @@ const Customer = ({values,errors,touched,status}) =>{
             }
         </label>
      <label htmlFor="repassword">Re-Type Password <br />
-            <Field as="input" id="repassword" type="password" name="repassword" onBlur={MatchMe} required/>
+            <Field as="input" id="repassword" type="password" name="repassword" onChange={MatchMe} required/>
             {
                 touched.repassword && errors.repassword &&(
                 <p>{errors.repassword}</p>
@@ -109,6 +153,8 @@ const Customer = ({values,errors,touched,status}) =>{
             }
             <span></span>
         </label>
+       </Row>
+       
         <div className="btnBox">
             <Btn type='submit'>Register</Btn>
         </div>
@@ -166,10 +212,36 @@ const CustomerSignUp = withFormik({
         
 //wait for team...whether axios or what and also where to an with what?
 //token to be accepted as a customer account
+        console.log(values)
+      
     }
 
 
 })(Customer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export default  CustomerSignUp;

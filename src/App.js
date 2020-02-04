@@ -17,8 +17,8 @@ function App() {
       {/* <Header />
       <Logout /> */}
       
-      {/* <Login />*/}
-      <SignUp />
+      {/* <SignUp />*/}
+      <Login />
       {/* Private Route */}
 
       {/* <StylistHome />

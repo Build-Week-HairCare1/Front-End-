@@ -11,15 +11,18 @@ import StylistSignUp from './stylist/StylistSignUp';
 
 
     const Nav = styled.div`
-    font-size:3rem;
+	font-size:3.5rem;
     margin:0;
     display:flex;
+    flex-direction:column;
     grid-gap:10px;
     font-family: 'Russo One', sans-serif;
+	text-shadow:0 0 10px whitesmoke;
     font-family: 'Dancing Script', cursive;
-    color:rgba(108, 65, 72, 75%);
-    
-
+    color:#000;
+    background-color: whitesmoke;
+    border-radius:10px;
+    box-shadow:0 0 10px #000;
 
 
     @media screen and (max-width:500px){
@@ -31,17 +34,21 @@ import StylistSignUp from './stylist/StylistSignUp';
 
     const Btn = styled.button`
 	flex: 0.6;
-	color: rgba(116, 58, 98, 0.7);
-    border: double 4px rgba(108, 65, 72, 75%);
-    border-radius:10px;
+	color:#000;
     font-weight:bolder;
+    width:100%;
+    border:none;
     background-color: whitesmoke;
 	padding:5px 10px;
-	font-size:2.5rem;
+	font-size:3.5rem;
 	text-shadow:0 0 10px whitesmoke;
-	box-shadow:0 0 10px whitesmoke;
 	-webkit-text-stroke:.8px whitesmoke;
-	cursor:pointer;
+    cursor:pointer;
+    transition:.5s ease-in;
+
+
+
+
 `
 
 
@@ -81,12 +88,17 @@ import StylistSignUp from './stylist/StylistSignUp';
     const LeftSide = styled.div`
     flex:1;
     display:flex;
+    flex-direction:column;
     width:80%;
     height:100%;
+    justify-content:flex-start;
+    align-items:flex-end;
     -moz-background-size:cover;
     -webkit-background-size:cover;
     background-size:cover;
     background-image:url("formpic.jpg");
+    background-position:center;
+    background-repeat:no-repeat;
     border-top-left-radius:20px;
     border-bottom-left-radius:20px;
 
@@ -108,7 +120,6 @@ import StylistSignUp from './stylist/StylistSignUp';
     `;
 
 
-
 const SignUp = () =>{
 
   
@@ -116,17 +127,18 @@ const SignUp = () =>{
 
     return(
         <Box>
-<Nav>
-<NavLink to='/'><Btn>Customer</Btn></NavLink>
-OR
-<NavLink to='/stylist'><Btn>Stylist</Btn></NavLink>
-</Nav>
+
 
 
 
 <FormBox>
-   <LeftSide>
 
+   <LeftSide>
+   <Nav>
+<NavLink to='/'  exact activeClassName="customerORStylist"><Btn>Customer</Btn></NavLink>
+OR
+<NavLink to='/stylist' exact activeClassName="customerORStylist"><Btn>Stylist</Btn></NavLink>
+</Nav>
 </LeftSide>
 <RightSide> 
      <Route exact path="/" component={CustomerSignUp}/> 
