@@ -14,7 +14,7 @@ const Header = () => {
       </div>
 
       {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}
-      <nav>
+      <nav className="main-nav">
         <Link to="/logout">Logout</Link>
       </nav>
     </header>

@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 
 // components
-import StylistList from './StylistList'
-import SearchForm from "./SearchForm";
+import Profile from "./customerHome/Profile";
+import Dashboard from "./customerHome/Dashboard";
+
+// styles
+import { CustomerStyles } from "./customerHome/CustomerStyles";
 
 function CustomerHome() {
   return (
-    <>
-    <h1>Customer Home</h1>
-    <StylistList/>
-    <SearchForm/>
-    </>
-  )   
+    <div className="customer-home">
+      <CustomerStyles />
+      <Profile />
+      <Dashboard />
+    </div>
+  );
 }
 
 export default CustomerHome;

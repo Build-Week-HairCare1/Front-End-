@@ -14,9 +14,9 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="query" placeholder="City, State, or Name of Business" onChange={handleChange} value={query} required/>
-      <button type="submit">Search</button>
+    <form onSubmit={handleSubmit} className="search-form">
+      <input className="search-input" type="text" name="query" placeholder="City, State, or Name of Business" onChange={handleChange} value={query} required/>
+      <button type="submit" className="search-btn">Search</button>
     </form>
   );
 };
