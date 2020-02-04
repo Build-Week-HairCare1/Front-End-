@@ -1,13 +1,20 @@
-import React from 'react';
-import StylistList from './StylistList'
+import React from "react";
+
+// components
+import Profile from "./customerHome/Profile";
+import Dashboard from "./customerHome/Dashboard";
+
+// styles
+import { CustomerStyles } from "./customerHome/CustomerStyles";
 
 function CustomerHome() {
   return (
-    <>
-    <h1>Customer Home</h1>
-    <StylistList/>
-    </>
-  )   
+    <div className="customer-home">
+      <CustomerStyles />
+      <Profile />
+      <Dashboard />
+    </div>
+  );
 }
 
 export default CustomerHome;
