@@ -1,60 +1,52 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script|Russo+One&display=swap");
 
-
 .App {
   text-align: center;
 }
 
-
-html{
-  width:100%;
-  height:100%;
-  background-image:url('../src/hairsalon.jpg');
-  -moz-background-size:cover;
-  -webkit-background-size:cover;
-  background-size:cover;
-  
+html {
+  width: 100%;
+  height: 100%;
+  background-image: url("../src/hairsalon.jpg");
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
-
-
-
-
-.formStyle{
-  display:flex;
-  flex-direction:column;
-  background-color:rgba(116, 58, 98, 0.7);
-  width:700px;
-  min-height:500px;
-  justify-content:space-between;
-  align-items:center;
-  font-size:3rem;
-  color:#000;
-  padding:10px 20px;
-  grid-gap:40px;
-  border-radius:20px;
-  box-shadow:0 0 10px #000;
-  font-family: 'Russo One', sans-serif;
-font-family: 'Dancing Script', cursive;
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(116, 58, 98, 0.7);
+  width: 700px;
+  min-height: 500px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3rem;
+  color: #000;
+  padding: 10px 20px;
+  grid-gap: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #000;
+  font-family: "Russo One", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
-label{
-  flex:1;
-  width:80%;
-  display:flex;
-  flex-direction:column;
-  font-size:2.5rem;
-  font-weight:bolder;
+label {
+  flex: 1;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
 
-
-input{
-  height:70px;
-  border-radius:10px;
-  border:double rgba(116, 58, 98, 0.7);
-  background-color:azure;
-  font-size:2rem;
-  font-weight:bolder;
-  letter-spacing:.1rem;
-  padding:2px 5px;
+input {
+  height: 70px;
+  border-radius: 10px;
+  border: double rgba(116, 58, 98, 0.7);
+  background-color: azure;
+  font-size: 2rem;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  padding: 2px 5px;
 }

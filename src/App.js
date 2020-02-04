@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 // styles
 import "./App.css";
@@ -13,13 +14,14 @@ import Login from "./components/Login";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
-      <Logout /> */}
-      <Login />
-      {/* Private Route */}
+      <Header />
 
-      {/* <StylistHome />
-      <CustomerHome /> */}
+      <Switch>
+        <Route path="/stylist/home" component={StylistHome} />
+        <Route path="/customer/home" component={CustomerHome} />
+        <Route path="/logout" component={Logout} />
+        <Route path="/" component={Login} />
+      </Switch>
     </div>
   );
 }
