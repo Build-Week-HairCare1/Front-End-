@@ -22,6 +22,8 @@ border:double rgba(116, 58, 98, 0.7);
 `
  
 
+
+
    
 const MatchMe = (e) =>{
     let wordSoFar = e.target.value
@@ -63,7 +65,7 @@ const Stylist = ({values,errors,touched,status}) =>{
 
     return(
             
-            <Form className='formStyle'>
+            <Form className="formSignUp">
                 <h2>Stylist</h2>
 
                 <label htmlFor="name"> First Name <br />

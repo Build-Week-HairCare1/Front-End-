@@ -35,6 +35,7 @@ const MatchMe = (e) =>{
 }
 
 
+
 const RemoveThis = (card_to_remove) =>{
 	console.log(card_to_remove.target.parentNode.remove());
 
@@ -62,7 +63,7 @@ const Customer = ({values,errors,touched,status}) =>{
 
     return(
             
-            <Form className='formStyle'>
+            <Form className="formSignUp">
                 <h2>Customer</h2>
 
                 <label htmlFor="name"> First Name <br />

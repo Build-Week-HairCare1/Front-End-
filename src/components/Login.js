@@ -14,7 +14,7 @@ height:100%;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-grid-gap:300px;
+grid-gap:20px;
 `;
 
     const Nav = styled.div`
@@ -25,15 +25,15 @@ grid-gap:300px;
     const Btn = styled.button`
 	flex: 0.6;
 	color: rgba(116, 58, 98, 0.7);
-    border: double 4px rgba(116, 58, 98, 0.7);
+    border: double 4px rgba(108, 65, 72, 75%);
     border-radius:10px;
     font-weight:bolder;
-    background-color: azure;
+    background-color: whitesmoke;
 	padding:5px 10px;
 	font-size:2.5rem;
-	text-shadow:0 0 10px azure;
+	text-shadow:0 0 10px whitesmoke;
 	box-shadow:0 0 10px azure;
-	-webkit-text-stroke:.8px azure;
+	-webkit-text-stroke:.8px whitesmoke;
 	cursor:pointer;
 `
 

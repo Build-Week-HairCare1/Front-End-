@@ -5,12 +5,12 @@ import * as Yup from 'yup';
 
  
 const Btn = styled.button`
-color: rgba(116, 58, 98, .7);
-border: double 4px azure;
-background-color:azure;
+color: rgba(108, 65, 72, 75%);
+border: double 4px whitesmoke;
+background-color:whitesmoke;
 padding:5px 10px;
 font-size:3rem;
-text-shadow:0 0 10px azure;
+text-shadow:0 0 10px whitesmoke;
 -webkit-text-stroke:.8px azure;
 cursor:pointer;
 width:200px;
@@ -18,7 +18,7 @@ border-radius:10px;
 font-weight:bolder;
 font-family: 'Russo One', sans-serif;
 font-family: 'Dancing Script', cursive;
-border:double rgba(116, 58, 98, 0.7);
+border:double rgba(108, 65, 72, 75%);
 `
 
 

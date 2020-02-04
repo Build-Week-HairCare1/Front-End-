@@ -16,7 +16,8 @@ function App() {
     <div className="App">
       {/* <Header />
       <Logout /> */}
-      <Login />
+      
+      {/* <Login />*/}
       <SignUp />
       {/* Private Route */}
 

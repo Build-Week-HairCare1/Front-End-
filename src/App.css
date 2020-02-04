@@ -12,6 +12,7 @@ html{
   -moz-background-size:cover;
   -webkit-background-size:cover;
   background-size:cover;
+  /* background-image:url("../src/hairsalon.jpg"); */
   
 }
 
@@ -22,13 +23,13 @@ html{
 .formStyle{
   display:flex;
   flex-direction:column;
-  background-color:rgba(116, 58, 98, 0.7);
+  background-color:rgba(108, 65, 72, 75%);
   width:700px;
   min-height:500px;
   justify-content:space-between;
   align-items:center;
   font-size:3rem;
-  color:#000;
+  color:white;
   padding:10px 20px;
   grid-gap:40px;
   border-radius:20px;
@@ -36,6 +37,71 @@ html{
   font-family: 'Russo One', sans-serif;
 font-family: 'Dancing Script', cursive;
 }
+
+
+ .formSignUp{
+  display:flex;
+  flex-direction:column;
+  background-color:rgba(108, 65, 72, 75%);
+  width:100%;
+  height:100%;
+  justify-content:space-between;
+  align-items:center;
+  font-size:3rem;
+  color:white;
+  padding:10px 20px;
+  grid-gap:40px;
+  border-radius:0px 20px 20px 0px;
+  font-family: 'Russo One', sans-serif;
+font-family:'Dancing Script', cursive;
+overflow-y:scroll;
+}
+
+
+@media screen and (max-width:500px){
+            
+  
+
+
+.formStyle{
+  width:100%;
+  padding:0;
+
+}
+
+
+
+.formSignUp{
+  width:100%;
+  padding:0;
+
+}
+
+
+
+
+
+label{
+  flex:1;
+  width:80%;
+  display:flex;
+  flex-direction:column;
+  font-size:1rem;
+  font-weight:bolder;
+}
+
+
+input{
+  height:100%;
+  border-radius:10px;
+  font-size:1rem;
+  padding:2px 5px;
+}
+
+
+}
+
+
 
 label{
   flex:1;
@@ -50,7 +116,7 @@ label{
 input{
   height:70px;
   border-radius:10px;
-  border:double rgba(116, 58, 98, 0.7);
+  border:double rgba(108, 65, 72, 75%);
   background-color:azure;
   font-size:2rem;
   font-weight:bolder;
