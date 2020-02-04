@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Route} from 'react-router-dom';
-import CustomerLogin from './customer/customerLogin';
-import StylistLogin from './stylist/stylistLogin';
+import CustomerLogin from './customer/CustomerLogin';
+import StylistLogin from './stylist/StylistLogin';
 
 
 const formsStyle = {
@@ -42,8 +42,6 @@ const Login = () =>{
 
     return(
         <div>
-         
-            
             <Route exact path="/" component={CustomerLogin}/>
             <Route exact path="/stylist" component={StylistLogin}/>
         </div>
