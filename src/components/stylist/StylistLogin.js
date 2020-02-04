@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/components/stylist/stylistLogin.js
 import React from "react";
 import { withFormik, Form, Field } from "formik";
 import styled from "styled-components";
@@ -17,8 +18,16 @@ const formsStyle = {
   padding: ".5%",
   borderRadius: "20px"
 };
+=======
+import React from 'react';
+import {withFormik,Form,Field} from 'formik';
+import styled from 'styled-components';
+import * as Yup from 'yup';
+>>>>>>> 11d571ae45e54182661622ffdd4facbf9099656e:src/components/stylist/StylistLogin.js
 
+ 
 const Btn = styled.button`
+<<<<<<< HEAD:src/components/stylist/stylistLogin.js
   color: azure;
   border: double 4px azure;
   background-color: rgba(249, 132, 212, 0.4);
@@ -51,6 +60,44 @@ const Stylist = ({ values, errors, touched, status }) => {
           />
           {touched.email && errors.email && <p>{errors.email}</p>}
           <span></span>
+=======
+color: rgba(116, 58, 98, 7);
+border: double 4px azure;
+background-color:azure;
+padding:5px 10px;
+font-size:2.5rem;
+text-shadow:0 0 10px azure;
+-webkit-text-stroke:.8px azure;
+cursor:pointer;
+width:200px;
+border-radius:10px;
+font-weight:bolder;
+font-family: 'Russo One', sans-serif;
+font-family: 'Dancing Script', cursive;
+border:double rgba(116, 58, 98, 0.7);
+`
+
+
+   
+
+const Stylist = ({values,errors,touched,status}) =>{
+
+
+
+
+    return(
+            
+            <Form className='formStyle'>
+                <h2>Stylist</h2>
+ <label htmlFor="email">Email <br />
+            <Field as="input" id="email" type="email" name="email" className='inp' />
+            {
+                touched.email && errors.email &&(
+                <p>{errors.email}</p>
+                )
+            }
+            <span></span>
+>>>>>>> 11d571ae45e54182661622ffdd4facbf9099656e:src/components/stylist/StylistLogin.js
         </label>
         <label htmlFor="password">
           Password <br />
@@ -65,12 +112,26 @@ const Stylist = ({ values, errors, touched, status }) => {
         </label>
 
         <div className="btnBox">
+<<<<<<< HEAD:src/components/stylist/stylistLogin.js
           <Btn type="submit">Confirm</Btn>
         </div>
       </Form>
     </formsStyle>
   );
 };
+=======
+            <Btn type='submit'>Login</Btn>
+        </div>
+    </Form>
+   
+        )
+
+    }
+
+
+
+
+>>>>>>> 11d571ae45e54182661622ffdd4facbf9099656e:src/components/stylist/StylistLogin.js
 
 const StylistLogin = withFormik({
   mapPropsToValues(props) {
