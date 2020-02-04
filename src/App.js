@@ -14,7 +14,12 @@ import Login from "./components/Login";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
+      <Logout /> */}
+      
+      {/* <SignUp />*/}
+      <Login />
+      {/* Private Route */}
 
       <Switch>
         <Route path="/stylist/home" component={StylistHome} />
