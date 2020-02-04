@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import Logout from "./components/Logout";
 import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
-import Login from './components/Login'
+import Login from "./components/Login";
 
 function App() {
   return (
