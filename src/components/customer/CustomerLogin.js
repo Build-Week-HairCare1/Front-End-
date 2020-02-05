@@ -1,7 +1,10 @@
 import React from 'react';
-import {withFormik,Form,Field} from 'formik';
+import {withFormik,Field} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup'
+import 'bootstrap/dist/css/bootstrap.css'
+import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import {FacebookLoginButton} from 'react-social-login-buttons'
 
 
 const Btn = styled.button`
@@ -22,40 +25,50 @@ flex: 0.6;
 `
 
 
+ 
 
 
-
-const Customer = ({values,errors,touched,status}) =>{
+const Customer = ({values,errors,touched,status}) =>{ 
 
 
 
 
     return( 
             
-             <Form className='formStyle'>
+             <Form>
              <h2>Customer</h2>
- <label htmlFor="email">Email <br />
-            <Field as="input" id="email" type="email" name="email" className='inp' />
+             
+  <div className="form-group">
+ <label htmlFor="email"><span className="labez">Email</span> <br />
+            <Field as="input" id="email" type="email" name="email"  ariaDescribedby="emailHelp" className="form-control"  />
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
                 )
             }
-            <span></span>
+            <span id="emailHelp" className="form-text text-muted"></span>
         </label>
-        <label htmlFor="password">Password <br />
-            <Field as="input" id="password" type="password" name="password"  className='inp' />
+        </div>
+        <div className="form-group">
+
+        <label htmlFor="password"><span className="labez">Password</span> <br />
+            <Field as="input" id="password" type="password" name="password"  className="form-control"  />
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
                 )
             }
         </label>
+                </div>
+                <div className="form-group">
 
-        <div className="btnBox">
-            <Btn type='submit'>Login</Btn>
+            <Button type='submit' className="btn btn-primary">Login</Button>
         </div>
     </Form>
+   
+
+
+
    
         )
 
@@ -84,7 +97,7 @@ const CustomerLogin = withFormik({
     validationSchema: Yup.object().shape({
      
         email: Yup.string().required(
-            "ehhh not so good fr..."
+            "Please type a valid email"
         ),
 
         password: Yup.string().required(

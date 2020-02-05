@@ -2,6 +2,7 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import styled from "styled-components";
 import * as Yup from "yup";
+import {Button, FormGroup, Label, Input} from 'reactstrap'
 
 const Btn = styled.button`
 flex: 0.6;
@@ -29,28 +30,35 @@ const Stylist = ({values,errors,touched,status}) =>{
 
     return(
             
-            <Form className='formStyle'>
+            <Form>
                 <h2>Stylist</h2>
- <label htmlFor="email">Email <br />
-            <Field as="input" id="email" type="email" name="email" className='inp' />
+
+                <div className="form-group">
+
+ <label htmlFor="email"><span className="labez">Email</span> <br />
+            <Field as="input" id="email" type="email" name="email"   ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
                 )
             }
-            <span></span>
+            <span  id="emailHelp" className="form-text text-muted"></span>
         </label>
-        <label htmlFor="password">Password <br />
-            <Field as="input" id="password" type="password" name="password"  className='inp' />
+        </div>
+        <div className="form-group">
+
+        <label htmlFor="password"><span className="labez">Password</span> <br />
+            <Field as="input" id="password" type="password" name="password"  ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
                 )
             }
         </label>
-
-        <div className="btnBox">
-            <Btn type='submit'>Login</Btn>
+</div>
+  <div className="form-group">
+        
+            <Button type='submit' className="btn btn-primary">Login</Button>
         </div>
     </Form>
   );
@@ -65,7 +73,7 @@ const StylistLogin = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    email: Yup.string().required("ehhh not so good fr..."),
+    email: Yup.string().required("Please type a valid email"),
 
     password: Yup.string().required("You need the Password")
   }),

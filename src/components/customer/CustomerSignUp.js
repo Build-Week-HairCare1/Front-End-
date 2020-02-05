@@ -3,7 +3,7 @@ import {withFormik,Form,Field} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
 import axios from 'axios';
-
+import {Button} from 'reactstrap'
 
 
 let customer = {
@@ -15,7 +15,7 @@ let customer = {
     state: '',
     reviews: [
       {
-        title: '',
+        title: '', 
         description: '',
         stars: 0,
         stylist: '',
@@ -46,6 +46,8 @@ const Row = styled.div`
 flex:1;
 display:flex;
 flex-direction:row;
+justify-content:space-between;
+grid-gap:10px;
 `;
 
 
@@ -89,74 +91,91 @@ const Customer = ({values,errors,touched,status}) =>{
 
     return(
             
-            <Form className="formSignUp">
+            <Form >
                 <h3>Customer</h3>
 
-                <Row>
 
-                <label htmlFor="name"> First Name <br />
-            <Field as="input" id="name" type="text" maxLength="10" name="name" required/>
+                <div className="form-group">
+     <Row>
+
+                <label htmlFor="name"> 
+            <Field as="input" id="name" type="text" maxLength="10" name="name" ariaDescribedby="nameHelp" placeholder="First Name" className="form-control" required/>
             {
                 touched.name && errors.name &&(
-                <p>{errors.name}</p>
+                <p id="nameHelp" className="form-text text-muted">{errors.name}</p>
                 )
             }
         </label>
 
-        <label htmlFor="last">Last Name <br />
-            <Field as="input" id="last" type="text" maxLength="10" name="last" required/>
+        <label htmlFor="last">
+            <Field as="input" id="last" type="text" maxLength="10" name="last"  ariaDescribedby="lastHelp"  placeholder="Last Name" className='form-control' required/>
             {
                 touched.last && errors.last &&(
-                <p>{errors.last}</p>
+                <p  id="lastHelp" className="form-text text-muted">{errors.last}</p>
                 )
             }
         </label>
                 </Row>
 
-        <label htmlFor="email">Email <br />
-            <Field as="input" id="email" type="email" name="email" className='inp' required/>
+                </div>
+
+                <div className="form-group">
+ <label htmlFor="email">
+            <Field as="input" id="email" type="email" name="email"  placeholder="Example@email.com" ariaDescribedby="emailHelp"  className='form-control' required/>
             {
                 touched.email && errors.email &&(
-                <p>{errors.email}</p>
+                <p id="emailHelp" className="form-text text-muted">{errors.email}</p>
                 )
             }
-            <span></span>
+            <span id="emailHelp" className="form-text text-muted"></span>
         </label>
+                    
+</div>
+
+
+<div className="form-group">
 
 <Row>
-     <label htmlFor="city">City<br />
-            <Field as="input" id="city" type="text" maxLength="14" name="city" required/>
+     <label htmlFor="city">
+            <Field as="input" id="city" type="text" maxLength="14" name="city"  placeholder="City" className='form-control' required/>
            
         </label>
 
-        <label htmlFor="state">State<br />
-            <Field as="input" id="state" type="text" maxLength="10" name="state" required/>
+        <label htmlFor="state">
+            <Field as="input" id="state" type="text" maxLength="10" name="state" placeholder="State"   className='form-control' required/>
           
         </label>
 </Row>
+                    
+</div>
        
-       <Row>
-            <label htmlFor="password">Password <br />
-            <Field as="input" id="password" type="password" name="password"  className='inp' required/>
+<div className="form-group">
+   <Row>
+            <label htmlFor="password">
+            <Field as="input" id="password" type="password" name="password" placeholder="Password"  ariaDescribedby="pwordtHelp"   className='form-control' required/>
             {
                 touched.password && errors.password &&(
-                <p>{errors.password}</p>
+                <p id="pwordtHelp" className="form-text text-muted">{errors.password}</p>
                 )
             }
         </label>
-     <label htmlFor="repassword">Re-Type Password <br />
-            <Field as="input" id="repassword" type="password" name="repassword" onChange={MatchMe} required/>
+     <label htmlFor="repassword">
+            <Field as="input" id="repassword" type="password" name="repassword" placeholder="Re-Type Password"   ariaDescribedby="rpwordtHelp"  onChange={MatchMe} className='form-control' required/>
             {
                 touched.repassword && errors.repassword &&(
-                <p>{errors.repassword}</p>
+                <p id="rpwordtHelp" className="form-text text-muted">{errors.repassword}</p>
                 )
             }
-            <span></span>
+            <span id="rpwordtHelp" className="form-text text-muted"></span>
         </label>
        </Row>
+                    
+</div>
        
-        <div className="btnBox">
-            <Btn type='submit'>Register</Btn>
+    
+       
+        <div className="form-group">
+            <Button type='submit' className='btn btn-primary'>Register</Button>
         </div>
     </Form>
    
