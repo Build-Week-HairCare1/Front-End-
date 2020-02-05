@@ -11,7 +11,7 @@ const DashboardContent = props => {
       ) : (
         data.reviews.map(item => {
           return (
-            <div className="review-card">
+            <div className="review-card" key={item.id}>
               <div className="card-info">
                 <figure>
                   <img

@@ -6,7 +6,6 @@ const Profile = props => {
 
   return (
     <div className="profile-container">
-      <button>Edit button</button>
       <figure>
         <img
           src="https://images.unsplash.com/photo-1470259078422-826894b933aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80"
