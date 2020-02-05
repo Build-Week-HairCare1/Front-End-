@@ -11,6 +11,9 @@ import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+
+
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +23,7 @@ function App() {
 
       {/* <SignUp />*/}
       {/* Private Route */}
+
 
       <Switch>
         <Route path="/stylist/home" component={StylistHome} />
