@@ -4,8 +4,8 @@ import React from "react";
 import { Rating } from "@material-ui/lab";
 
 const PopupCard = props => {
-  const { location } = props;
-  console.log(location);
+  const { location, businessToReview, setSelected } = props;
+
   return (
     <div className="popup-container">
       <figure className="popup-image">
@@ -24,7 +24,14 @@ const PopupCard = props => {
         </p>
       </div>
 
-      <button className="add-btn">Add Review</button>
+      <div className="btn-container">
+        <button className="add-btn" onClick={() => businessToReview(location)}>
+          Add Review
+        </button>
+        <button className="close-popup" onClick={() => setSelected(null)}>
+          Close
+        </button>
+      </div>
     </div>
   );
 };

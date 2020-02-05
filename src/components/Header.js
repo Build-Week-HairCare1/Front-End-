@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <h1>HairCare</h1>
+        <h1>Hair+Care</h1>
       </div>
 
       {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}

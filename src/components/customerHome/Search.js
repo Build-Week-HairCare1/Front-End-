@@ -16,7 +16,7 @@ import PopupCard from "./PopupCard";
 import icon from "./scissors.svg";
 
 const Search = props => {
-  const { city, state } = props;
+  const { city, state, businessToReview } = props;
 
   // mapbox token
   const mapBoxToken =
@@ -45,7 +45,6 @@ const Search = props => {
         `/businesses/search?location=${newLocation}&categories=barbers,hair&radius=16093`
       )
       .then(res => {
-        console.log(res);
         setLocations(res.data.businesses);
       })
       .catch(err => console.log(err));
@@ -96,9 +95,13 @@ const Search = props => {
           <Popup
             latitude={selected.coordinates.latitude}
             longitude={selected.coordinates.longitude}
-            onClose={() => setSelected(null)}
+            closeButton={false}
           >
-            <PopupCard location={selected} />
+            <PopupCard
+              location={selected}
+              businessToReview={businessToReview}
+              setSelected={setSelected}
+            />
           </Popup>
         )}
       </ReactMapGl>

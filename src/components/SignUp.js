@@ -15,13 +15,12 @@ import StylistSignUp from './stylist/StylistSignUp';
     const Box = styled.div`
     flex:1;
     display:flex;
-    width:1000px;
-    height:700px;
+    width:100%;
+    height:100%;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     grid-gap:20px;
-    box-shadow:0 0 10px #000;
 
 
 
@@ -40,15 +39,15 @@ import StylistSignUp from './stylist/StylistSignUp';
 
 
     const FormBox = styled.div`
-    flex:1;
     display:flex;
-    width:100%;
-    height:800px;
+    width:1000px;
+    height:600px;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
     margin:0;
     paddinng:0;
+    box-shadow:0 0 10px #000;
     grid-gap:20px;
 
 
@@ -105,10 +104,10 @@ const SignUp = () =>{
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
   <li className="nav-item">
-    <a  className="nav-link active" id="home-tab" dataToggle="tab" role="tab" ariaControls="home" ariaSelected="true"><NavLink to='/'  exact activeClassName="customerORStylist">Customer</NavLink></a>
+    <NavLink to='/'  exact activeClassName="customerORStylist"  className="nav-link active" id="home-tab" dataToggle="tab" role="tab" ariaControls="home" ariaSelected="true">Customer</NavLink>
   </li>
   <li className="nav-item">
-    <a  className="nav-link" id="profile-tab" dataToggle="tab" role="tab" ariaControls="profile" ariaSelected="false"><NavLink to='/stylist' exact activeClassName="customerORStylist"> Stylist </NavLink></a>
+    <NavLink to='/stylist' exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab" ariaControls="profile" ariaSelected="false"> Stylist </NavLink>
   </li>
   <li className="nav-item">
     <a className="nav-link disabled" href="" tabIndex="-1" ariaDisabled="true">Sign Up</a>
