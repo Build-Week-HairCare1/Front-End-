@@ -11,8 +11,24 @@ html{
   -moz-background-size:cover;
   -webkit-background-size:cover;
   background-size:cover;
-  /* background-image:url("../src/hairsalon.jpg"); */
+  background-image:url("../src/hairsalon.jpg");
   
+}
+
+#root{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+
+}
+
+.App{
+ flex:1;
+}
+.main-nav{
+  flex:1;
+  display:flex;
 }
 
 

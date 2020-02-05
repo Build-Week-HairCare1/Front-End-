@@ -55,10 +55,10 @@ const MatchMe = (e) =>{
     let wordSoFar = e.target.value
     
         
-    if(wordSoFar===e.target.parentNode.parentNode.children[0].children[1].value){
-        e.target.parentNode.children[2].innerHTML = "Matches"
+    if(wordSoFar===e.target.parentNode.parentNode.children[0].children[0].value){
+        e.target.parentNode.children[1].innerHTML = "Matches"
     }else{
-        e.target.parentNode.children[2].innerHTML = "not Matching"
+        e.target.parentNode.children[1].innerHTML = "not Matching"
     }
 }
 
