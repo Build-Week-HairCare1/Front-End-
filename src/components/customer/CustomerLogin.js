@@ -7,24 +7,20 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import {FacebookLoginButton} from 'react-social-login-buttons'
 
 
-const Btn = styled.button`
-flex: 0.6;
-	color:#fff;
-    font-weight:bolder;
-    width:100%;
-    border:none;
-    border-radius:10px;
-    background-color: #000;
-	padding:10px;
-	font-size:3rem;
-	-webkit-text-stroke:.8px whitesmoke;
-    cursor:pointer;
-    transition:.5s ease-in;
-
-
-`
-
-
+const btnExtraStyles = {
+    fontWeight:"bolder",
+    boxShadow:"0 0 5px #3f3f3f",
+    backgroundColor:'rgb(220, 35, 96)',
+    borderRadius:'0%',
+  fontSize:"1.5rem",
+}
+     
+  
+  const Row = styled.div`
+  flex:1;
+  display:flex;
+  flex-direction:row;
+  `;
  
 
 
@@ -36,33 +32,43 @@ const Customer = ({values,errors,touched,status}) =>{
     return( 
             
              <Form>
-             <h2>Customer</h2>
+             <h1>Customer</h1>
              
-  <div className="form-group">
- <label htmlFor="email"><span className="labez">Email</span> <br />
-            <Field as="input" id="email" type="email" name="email"  ariaDescribedby="emailHelp" className="form-control"  />
+             <div className="form-group">
+                <Row>
+                  <label htmlFor="email"><span className="labez">Email</span> <br />
+            <Field as="input" id="email" type="email" name="email"   ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
                 )
             }
-            <span id="emailHelp" className="form-text text-muted"></span>
+            <span  id="emailHelp" className="form-text text-muted"></span>
         </label>
+                </Row>
+
+ 
         </div>
+
+
         <div className="form-group">
+                <Row>
 
         <label htmlFor="password"><span className="labez">Password</span> <br />
-            <Field as="input" id="password" type="password" name="password"  className="form-control"  />
+            <Field as="input" id="password" type="password" name="password"  ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
                 )
             }
         </label>
-                </div>
-                <div className="form-group">
 
-            <Button type='submit' className="btn btn-primary">Login</Button>
+                </Row>
+
+</div>
+  <div className="form-group">
+        
+            <Button type='submit' className="btn" style={btnExtraStyles}>Login</Button>
         </div>
     </Form>
    
@@ -97,11 +103,11 @@ const CustomerLogin = withFormik({
     validationSchema: Yup.object().shape({
      
         email: Yup.string().required(
-            "Please type a valid email"
+            "Email not valid"
         ),
 
         password: Yup.string().required(
-            "You need the Password"
+            "You need your Password"
         ),
 
         
