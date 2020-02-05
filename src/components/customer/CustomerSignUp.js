@@ -25,22 +25,7 @@ let customer = {
     ],
   };
  
-const Btn = styled.button`
-flex: 0.6;
-	color:#fff;
-    font-weight:bolder;
-    width:100%;
-    border:none;
-    border-radius:10px;
-    background-color: #000;
-	padding:10px;
-	font-size:3rem;
-	-webkit-text-stroke:.8px whitesmoke;
-    cursor:pointer;
-    transition:.5s ease-in;
 
-
-`
 
 const Row = styled.div`
 flex:1;
@@ -60,6 +45,14 @@ const MatchMe = (e) =>{
     }else{
         e.target.parentNode.children[1].innerHTML = "not Matching"
     }
+}
+
+
+const btnExtraStyles = {
+    fontWeight:"bolder",
+    boxShadow:"0 0 5px #3f3f3f",
+    backgroundColor:'rgb(220, 35, 96)',
+    borderRadius:'0%'
 }
 
 
@@ -137,7 +130,7 @@ const Customer = ({values,errors,touched,status}) =>{
 
 <Row>
      <label htmlFor="city">
-            <Field as="input" id="city" type="text" maxLength="14" name="city"  placeholder="City" className='form-control' required/>
+            <Field as="input" id="city" type="text" maxLength="14" name="city"  placeholder="City" className='form-control' />
            
         </label>
 
@@ -175,7 +168,7 @@ const Customer = ({values,errors,touched,status}) =>{
     
        
         <div className="form-group">
-            <Button type='submit' className='btn btn-primary'>Register</Button>
+            <Button type='submit' className='btn' style={btnExtraStyles}>Register</Button>
         </div>
     </Form>
    
