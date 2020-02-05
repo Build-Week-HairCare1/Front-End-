@@ -13,16 +13,14 @@ import StylistSignUp from './stylist/StylistSignUp';
 
 
     const Box = styled.div`
-    flex:1;
-    position:relative;
+    position:absolute;
     display:flex;
     width:100%;
-    height:auto;
+    height:100%;
     flex-direction:column;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
     padding:0;
-    margin-top:-200px;
     border-top:none;
         @media(max-width:500px){
           width:100%;
@@ -74,6 +72,22 @@ import StylistSignUp from './stylist/StylistSignUp';
 
 
 
+    const PageTitle = styled.h1`
+    font-size:5rem;
+      color:#000;
+
+
+
+      font-family: ‘Roboto’, sans-serif;
+  font-family: ‘Playfair Display’, serif; 
+
+
+
+                @media(max-width:500px){
+                  display:none;
+                }
+    `;
+
 const SignUp = () =>{
 
   
@@ -81,6 +95,7 @@ const SignUp = () =>{
 
     return(
         <Box>
+<PageTitle>Sign Up Here</PageTitle>
 
 
 
@@ -96,7 +111,6 @@ const SignUp = () =>{
     <a className="nav-link disabled" href="" tabIndex="-1" ariaDisabled="true">Sign Up</a>
   </li>
 </ul>
-
 
 
 <FormBox>

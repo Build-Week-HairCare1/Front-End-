@@ -43,7 +43,8 @@ let stylist = {
   const btnExtraStyles = {
     fontWeight:"bolder",
     boxShadow:"0 0 5px #3f3f3f",
-    backgroundColor:'rgb(220, 35, 96)',   
+    backgroundColor:'rgb(220, 35, 96)',
+    borderRadius:'0%'
 }
 
 
@@ -94,14 +95,14 @@ const Stylist = ({values,errors,touched,status}) =>{
 
     return(
             
-            <Form className="formSignUp">
+            <Form>
                 <h3>Stylist</h3>
 
 
                 <div className="form-group">
                     
-
                 <Row>
+
 <label htmlFor="name"> 
             <Field as="input" id="name" type="text" maxLength="10" name="name"  ariaDescribedby="nameHelp" className="form-control"  placeholder="First Name" required/>
             {
@@ -152,7 +153,7 @@ const Stylist = ({values,errors,touched,status}) =>{
 <div className="form-group">
                     <Row>
             <label htmlFor="salon"> 
-            <Field as="input" id="salon" type="text" maxLength="10" name="salon" className="form-control"  placeholder="Salon" required/>
+            <Field as="input" id="salon" type="text" maxLength="10" name="salon" className="form-control"  placeholder="Salon or n/a" required/>
             {
                 touched.salon && errors.salon &&(
                 <p>{errors.salon}</p>
@@ -173,8 +174,8 @@ const Stylist = ({values,errors,touched,status}) =>{
                 </div>
             
             <div className="form-group">
-            <label htmlFor="yrs">Yrs experience<br />
-            <Field as="input" id="yrs" type="number" min="0" max="10" name="yrs" className="form-control"  placeholder="0" required/>
+            <label htmlFor="yrs">
+            <Field as="input" id="yrs" type="number" min="0" max="30" name="yrs" className="form-control"  placeholder="Years of experience" required/>
             {
                 touched.yrs && errors.yrs &&(
                 <p>{errors.yrs}</p>
@@ -209,7 +210,7 @@ const Stylist = ({values,errors,touched,status}) =>{
        
       
         <div className="form-group">
-        <Button type='submit' className='btn btn-danger'  style={btnExtraStyles}>Register</Button>
+        <Button type='submit' className='btn'  style={btnExtraStyles}>Register</Button>
         </div>
     </Form>
    
@@ -254,7 +255,7 @@ const StylistSignUp = withFormik({
         ),
 
         password: Yup.string().required(
-            "You need the Password"
+            "You need a Password"
         ),
 
         
