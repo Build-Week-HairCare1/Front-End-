@@ -2,7 +2,7 @@ import React from 'react';
 import {withFormik,Form,Field} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-
+import {Button} from 'reactstrap'
  
 
 
@@ -109,51 +109,61 @@ const Stylist = ({values,errors,touched,status}) =>{
                 <h3>Stylist</h3>
 
 
+                <div className="form-group">
+                    
+
                 <Row>
 <label htmlFor="name"> 
-            <Field as="input" id="name" type="text" maxLength="10" name="name" placeholder="First Name" required/>
+            <Field as="input" id="name" type="text" maxLength="10" name="name"  ariaDescribedby="nameHelp" className="form-control"  placeholder="First Name" required/>
             {
                 touched.name && errors.name &&(
-                <p>{errors.name}</p>
+                <p id="nameHelp" className="form-text text-muted">{errors.name}</p>
                 )
             }
         </label>
 
         <label htmlFor="last"> 
-            <Field as="input" id="last" type="text" maxLength="10" name="last"  placeholder="Last Name"required/>
+            <Field as="input" id="last" type="text" maxLength="10" name="last" className="form-control"  ariaDescribedby="lastHelp"    placeholder="Last Name"required/>
             {
                 touched.last && errors.last &&(
-                <p>{errors.last}</p>
+                <p  id="lastHelp" className="form-text text-muted">{errors.last}</p>
                 )
             }
         </label>
                 </Row>
-                
-        <label htmlFor="email"> 
-            <Field as="input" id="email" type="email" name="email"  placeholder="Example@email.com"required/>
+                </div>
+
+                <div className="form-group">
+                     <label htmlFor="email"> 
+            <Field as="input" id="email" type="email" name="email" className="form-control"   ariaDescribedby="emailHelp"  placeholder="Example@email.com"required/>
             {
                 touched.email && errors.email &&(
-                <p>{errors.email}</p>
+                <p  id="emailHelp" className="form-text text-muted">{errors.email}</p>
                 )
             }
-            <span></span>
+            <span  id="emailHelp" className="form-text text-muted"></span>
         </label>
-
-        <Row>
+                </div>
+                
+       
+        <div className="form-group">
+                      <Row>
      <label htmlFor="city"> 
-            <Field as="input" id="city" type="text" maxLength="14" name="city"  placeholder="City" required/>
+            <Field as="input" id="city" type="text" maxLength="14" name="city" className="form-control"  placeholder="City" required/>
            
         </label>
 
         <label htmlFor="state"> 
-            <Field as="input" id="state" type="text" maxLength="10" name="state"  placeholder="State" required/>
+            <Field as="input" id="state" type="text" maxLength="10" name="state" className="form-control"  placeholder="State" required/>
           
         </label>
 </Row> 
-
-            <Row>
+                    </div>
+      
+<div className="form-group">
+                    <Row>
             <label htmlFor="salon"> 
-            <Field as="input" id="salon" type="text" maxLength="10" name="salon"  placeholder="Salon" required/>
+            <Field as="input" id="salon" type="text" maxLength="10" name="salon" className="form-control"  placeholder="Salon" required/>
             {
                 touched.salon && errors.salon &&(
                 <p>{errors.salon}</p>
@@ -162,7 +172,7 @@ const Stylist = ({values,errors,touched,status}) =>{
         </label>
 
         <label htmlFor="specialty"> 
-            <Field as="input" id="specialty" type="text" maxLength="10" name="specialty"  placeholder="Specialty" required/>
+            <Field as="input" id="specialty" type="text" maxLength="10" name="specialty" className="form-control"  placeholder="Specialty" required/>
             {
                 touched.specialty && errors.specialty &&(
                 <p>{errors.specialty}</p>
@@ -171,39 +181,46 @@ const Stylist = ({values,errors,touched,status}) =>{
         </label>
         
             </Row>
+                </div>
             
-            <Row>
+            <div className="form-group">
             <label htmlFor="yrs">Yrs experience<br />
-            <Field as="input" id="yrs" type="number" min="0" max="10" name="yrs" placeholder="0" required/>
+            <Field as="input" id="yrs" type="number" min="0" max="10" name="yrs" className="form-control"  placeholder="0" required/>
             {
                 touched.yrs && errors.yrs &&(
                 <p>{errors.yrs}</p>
                 )
             }
         </label>
-                </Row>
-        <Row>
+                </div>
+          
+
+                <div className="form-group">
+                     <Row>
   <label htmlFor="password">  
-            <Field as="input" id="password" type="password" name="password"  className='inp' placeholder="Password" required/>
+            <Field as="input" id="password" type="password" name="password"  className="form-control"  ariaDescribedby="pwordtHelp"  placeholder="Password" required/>
             {
                 touched.password && errors.password &&(
-                <p>{errors.password}</p>
+                <p  id="pwordtHelp" className="form-text text-muted">{errors.password}</p>
                 )
             }
         </label>
      <label htmlFor="repassword"> 
-            <Field as="input" id="repassword" type="password" name="repassword" onChange={MatchMe} placeholder="Re-Type Password " required/>
+            <Field as="input" id="repassword" type="password" name="repassword" className="form-control"  ariaDescribedby="rpwordtHelp"  onChange={MatchMe} placeholder="Re-Type Password " required/>
             {
                 touched.repassword && errors.repassword &&(
-                <p>{errors.repassword}</p>
+                <p id="rpwordtHelp" className="form-text text-muted">{errors.repassword}</p>
                 )
             }
-            <span></span>
+            <span id="rpwordtHelp" className="form-text text-muted"></span>
         </label>
         </Row>
+                </div>
+
+       
       
-        <div className="btnBox">
-            <Btn type='submit'>Register</Btn>
+        <div className="form-group">
+        <Button type='submit' className='btn btn-primary'>Register</Button>
         </div>
     </Form>
    

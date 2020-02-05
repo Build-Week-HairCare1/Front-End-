@@ -18,7 +18,6 @@ function App() {
       <Logout /> */}
       
       {/* <SignUp />*/}
-      <Login />
       {/* Private Route */}
 
       <Switch>
