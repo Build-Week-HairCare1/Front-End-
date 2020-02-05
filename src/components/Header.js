@@ -11,7 +11,7 @@ const Header = () => {
     <header>
       <div className="logo">
 
-        <img width="100%" height="100%" src='logo.png'/>
+        <span id="brand">Hair+Care</span>
 
       </div>
 

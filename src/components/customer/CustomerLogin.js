@@ -1,18 +1,19 @@
 import React from 'react';
-import {withFormik,Field} from 'formik';
+import {withFormik,Field,Form} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup'
 import 'bootstrap/dist/css/bootstrap.css'
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import {Button, FormGroup, Label, Input} from 'reactstrap'
 import {FacebookLoginButton} from 'react-social-login-buttons'
-
+import {NavLink} from 'react-router-dom'
+import axios from 'axios';
 
 const btnExtraStyles = {
     fontWeight:"bolder",
     boxShadow:"0 0 5px #3f3f3f",
     backgroundColor:'rgb(220, 35, 96)',
     borderRadius:'0%',
-  fontSize:"1.5rem",
+    fontSize:"1.5rem",
 }
      
   
@@ -23,6 +24,9 @@ const btnExtraStyles = {
   `;
  
 
+  function smooth (e){
+      e.preventDefault()
+  }
 
 const Customer = ({values,errors,touched,status}) =>{ 
 
@@ -117,6 +121,20 @@ const CustomerLogin = withFormik({
     handleSubmit(values, {setStatus , resetForm}){
         
 //wait for team...whether axios or what and also where to an with what?
+
+console.log(values);
+
+
+axios.post("https://haircare1backend.herokuapp.com//api/customers/login ",values)
+    .then(res=>{
+        console.log(res)
+
+        setStatus(res.data)
+        resetForm()
+    })
+    .catch(err=>{
+        console.log(err)
+    })
     }
 
 
