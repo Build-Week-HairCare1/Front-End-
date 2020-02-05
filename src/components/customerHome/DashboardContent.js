@@ -23,7 +23,6 @@ const DashboardContent = props => {
                 <div className="info-container">
                   <h2>{item.title}</h2>
                   <p>{item.description}</p>
-                  <p>{item.stars}</p>
                 </div>
               </div>
             </div>

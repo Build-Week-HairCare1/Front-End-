@@ -1,10 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export const CustomerStyles = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Russo+One&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 html {
     font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -22,7 +24,7 @@ header {
 
     .logo{
         font-size: 1.8rem;
-        font-family: 'Russo One', sans-serif;
+        font-family: 'Playfair Display', serif;
     }
 
     .main-nav {
@@ -31,6 +33,7 @@ header {
         justify-content: flex-end;
         align-items: center;
         padding: 10px 0;
+        
 
         a {
             font-size: 1.5rem;
@@ -186,8 +189,8 @@ header {
             height: 40%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: space-evenly;
+            align-items: center;
 
         }
     }

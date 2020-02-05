@@ -10,13 +10,12 @@ import Logout from "./components/Logout";
 import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
 import Login from "./components/Login";
-import SignUp from './components/SignUp';
+import SignUp from "./components/SignUp";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
-      <Logout /> */}
-      
+      <Header />
+
       {/* <SignUp />*/}
       {/* Private Route */}
 
