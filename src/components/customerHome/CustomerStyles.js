@@ -48,7 +48,6 @@ header {
 
 
 .customer-home {
-    border: 2px solid black;
     height: 92vh;
     width: 100%;
     padding: 20px;
@@ -60,7 +59,8 @@ header {
 //profile container
 
 .profile-container {
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 10px;
     width: 15%;
     height: 40%;
     display: flex;
@@ -71,12 +71,15 @@ header {
     margin-top: 50px;
     
 
-    button {
+    .edit-icon {
         align-self: flex-end;
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-bottom: 10px;
     }
 
     figure {
-        height: 60%;
+        height: 70%;
         width: 90%;
         
         img {
@@ -99,6 +102,7 @@ header {
         }
 
         .location {
+            padding-top: 10px;
             font-size: 1.5rem;
         }
     }
@@ -110,10 +114,11 @@ header {
 .dashboard-container {
     width: 80%;
     height: 100%;
+   
 
     .dashboard-header {
         height: 40px;
-        width: 50%;
+        width: 30%;
         margin: 0 auto;
 
         .dashboard-links {
@@ -193,18 +198,118 @@ header {
 
 // search content
 .search-content {
-    border: 2px solid black;
     height: calc(100% - 40px);
     position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+
+    .map {
+        border-radius: 10px;
+    }
 
     .search-form {
-        border: 2px solid black;
-        width: 300px;
+        width: 250px;
         height: 100px;
         position: absolute;
         top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 10px;  
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-input {
+            width: 70%;
+            padding: 15px 10px;
+            height: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            background: white;
+            border: 0.5px solid black;
+        }
+
+        .search-btn {
+            padding: 5px;
+            width: 25%;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+
+    .icon-container {
+        background: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+
+        .icon{
+            width: 100%;
+            height: 100%;
+            object-position: center center;
+            object-fit: cover;
+        }
+    }
+}
+
+
+//popup card
+
+.popup-container{
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .popup-image{
+        width: 100%;
+        height: 60%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .info {
+        width: 90%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 20px 0;
+
+        .popup-title{
+            font-size: 1.5rem;
+        }
+
+        .popup-desc {
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stars {
+            margin-left: 10px;
+        }
+    }
+
+    .add-btn {
+        padding: 5px;
+        font-size: 1.5rem;
+        border: 1px solid black;
+        width: 40%;
+        border-radius: 10px;
     }
 }
 
