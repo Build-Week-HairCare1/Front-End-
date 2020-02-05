@@ -1,8 +1,9 @@
-import React from "react";
-import { withFormik, Form, Field } from "formik";
-import styled from "styled-components";
-import * as Yup from "yup";
+import React from 'react';
+import {withFormik,Form,Field} from 'formik';
+import styled from 'styled-components';
+import * as Yup from 'yup';
 
+ 
 const Btn = styled.button`
 flex: 0.6;
 	color:#fff;
@@ -53,26 +54,52 @@ const Stylist = ({values,errors,touched,status}) =>{
             <Btn type='submit'>Login</Btn>
         </div>
     </Form>
-  );
-};
+   
+        )
+
+    }
+
+
+
+
 
 const StylistLogin = withFormik({
-  mapPropsToValues(props) {
-    return {
-      email: props.email || "",
-      password: props.password || ""
-    };
-  },
 
-  validationSchema: Yup.object().shape({
-    email: Yup.string().required("ehhh not so good fr..."),
+   
 
-    password: Yup.string().required("You need the Password")
-  }),
+    mapPropsToValues(props){
 
-  handleSubmit(values, { setStatus, resetForm }) {
-    //wait for team...whether axios or what and also where to an with what?
-  }
+         
+
+        return{
+            email:props.email || "" ,
+            password:props.password || "",
+        }
+    },
+ 
+
+
+    validationSchema: Yup.object().shape({
+     
+        email: Yup.string().required(
+            "ehhh not so good fr..."
+        ),
+
+        password: Yup.string().required(
+            "You need the Password"
+        ),
+
+        
+    }),
+
+
+    handleSubmit(values, {setStatus , resetForm}){
+        
+//wait for team...whether axios or what and also where to an with what?
+    }
+
+
 })(Stylist);
 
-export default StylistLogin;
+
+export default  StylistLogin;
