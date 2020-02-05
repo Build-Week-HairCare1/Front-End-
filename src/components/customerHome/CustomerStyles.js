@@ -325,4 +325,85 @@ header {
     }
 }
 
+
+//add review form
+
+.add-form-container {
+    height: calc(100% - 40px);
+ 
+    
+
+    .add-form {
+        border: 2px solid black;
+        background: rgba(0, 0, 0, 0.7);
+        margin: 10px auto;
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .ind-field {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 10px 0;
+
+        .stars-rating {
+          
+            width: 100%;
+            
+        }
+
+
+        h2 {
+            align-self: center;
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        input {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.4rem;
+            width: 100%;
+        }
+
+        .image {
+            color: white;
+            padding: 5px 0px;
+        }
+    }
+
+    .add-btn {
+        padding: 5px;
+        color: white;
+        background: black;
+        width: 40%;
+        font-size: 1.4rem;
+        border: 0.5px solid white;
+        border-radius: 10px;
+        transition: 0.4s;
+        margin-top: 20px;
+
+        &:hover {
+            background: rgb(220, 35, 96);
+            transition: 0.4s;
+        }
+    }
+
+
+}
+
 `;
