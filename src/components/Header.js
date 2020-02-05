@@ -10,12 +10,15 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <h1>Hair+Care</h1>
+
+        <img width="100%" height="100%" src='logo.png'/>
+
       </div>
 
       {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}
       <nav className="main-nav">
-        <Link to="/logout">Logout</Link>
+        <a href="" id='home'>Home</a>
+        <a href="" id='team'>Team</a>
       </nav>
     </header>
   );
