@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
+
         <img width="100%" height="100%" src='logo.png'/>
+
       </div>
 
       {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}
