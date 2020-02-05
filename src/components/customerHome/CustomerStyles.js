@@ -121,6 +121,7 @@ header {
    
 
     .dashboard-header {
+      
         height: 40px;
         width: 30%;
         margin: 0 auto;

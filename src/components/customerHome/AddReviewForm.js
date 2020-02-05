@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+
+// action creator
+import { addReview } from "../../actions";
 
 // rating from material ui
 import { Rating } from "@material-ui/lab";
 
-const AddReviewForm = () => {
-  const initialFormState = {
+const AddReviewForm = props => {
+  const { business, data, addReview } = props;
+
+  let initialFormState = {
     title: "",
     description: "",
     stars: 0,
@@ -14,6 +20,18 @@ const AddReviewForm = () => {
   };
 
   const [review, setReview] = useState(initialFormState);
+
+  useEffect(() => {
+    if (business) {
+      setReview({
+        ...initialFormState,
+        stylist: business.name,
+        customer: `${data.first_name} ${data.last_name}`
+      });
+    } else {
+      props.history.push("/customer/home/search");
+    }
+  }, []);
 
   // change handler
   const handleChange = e => {
@@ -28,6 +46,8 @@ const AddReviewForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(review);
+    // addReview action will be here grabbing review object
+    props.history.push("/customer/home/");
   };
 
   return (
@@ -103,4 +123,10 @@ const AddReviewForm = () => {
   );
 };
 
-export default AddReviewForm;
+const mapStateToProps = state => {
+  return {
+    data: state.customerReducer.data
+  };
+};
+
+export default connect(mapStateToProps, { addReview })(AddReviewForm);

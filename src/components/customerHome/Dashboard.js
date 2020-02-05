@@ -29,9 +29,8 @@ const Dashboard = () => {
           )}
         />
         <Route
-          exact
           path="/customer/home/addreview"
-          component={AddReviewForm}
+          render={props => <AddReviewForm {...props} business={business} />}
         />
         <Route path="/customer/home/" component={DashboardContent} />
       </Switch>

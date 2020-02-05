@@ -1,3 +1,6 @@
+// action types
+import { ADD_REVIEW, FETCHING } from "../actions";
+
 const initialState = {
   isFetching: false,
   data: {
@@ -24,6 +27,22 @@ const initialState = {
 
 export const customerReducer = (state = initialState, action) => {
   switch (action.type) {
+    case FETCHING:
+      return {
+        ...state,
+        isFetching: true
+      };
+
+    case ADD_REVIEW:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          reviews: [...state.data.reviews, action.payload]
+        },
+        isFetching: false
+      };
+
     default:
       return state;
   }
