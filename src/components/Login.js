@@ -13,12 +13,24 @@ import StylistLogin from './stylist/StylistLogin';
 const Box = styled.div`
 flex:1;
 display:flex;
-width:100%;
+width:500px;
 height:100%;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 grid-gap:20px;
+background-color:#fff;
+box-shadow:0 0 10px #000;
+
+@media(max-width:500px){
+  width:100%;
+}
+
+
+
+@media(max-width:900px) and (min-width:500px) and (max-height:500px){
+  width:100%;
+}
 `;
 
 

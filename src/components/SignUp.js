@@ -15,12 +15,26 @@ import StylistSignUp from './stylist/StylistSignUp';
     const Box = styled.div`
     flex:1;
     display:flex;
-    width:100%;
-    height:100%;
+    width:1000px;
+    height:700px;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     grid-gap:20px;
+    box-shadow:0 0 10px #000;
+
+
+
+        @media(max-width:500px){
+          width:100%;
+        }
+
+
+
+
+@media(max-width:900px) and (min-width:500px) and (max-height:500px){
+  width:100%;
+}
     `;
 
 
@@ -28,7 +42,7 @@ import StylistSignUp from './stylist/StylistSignUp';
     const FormBox = styled.div`
     flex:1;
     display:flex;
-    width:1000px;
+    width:100%;
     height:800px;
     flex-direction:row;
     justify-content:space-between;
@@ -59,8 +73,6 @@ import StylistSignUp from './stylist/StylistSignUp';
     background-image:url("formpic.jpg");
     background-position:center;
     background-repeat:no-repeat;
-    border-top-left-radius:20px;
-    border-bottom-left-radius:20px;
 
     @media screen and (max-width:500px){
      display:none;           

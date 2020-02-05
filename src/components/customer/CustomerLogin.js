@@ -25,7 +25,7 @@ flex: 0.6;
 `
 
 
-
+ 
 
 
 const Customer = ({values,errors,touched,status}) =>{ 
@@ -97,7 +97,7 @@ const CustomerLogin = withFormik({
     validationSchema: Yup.object().shape({
      
         email: Yup.string().required(
-            "ehhh not so good fr..."
+            "Please type a valid email"
         ),
 
         password: Yup.string().required(

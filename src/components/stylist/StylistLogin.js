@@ -35,7 +35,7 @@ const Stylist = ({values,errors,touched,status}) =>{
 
                 <div className="form-group">
 
- <label htmlFor="email">Email <br />
+ <label htmlFor="email"><span className="labez">Email</span> <br />
             <Field as="input" id="email" type="email" name="email"   ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.email && errors.email &&(
@@ -47,8 +47,8 @@ const Stylist = ({values,errors,touched,status}) =>{
         </div>
         <div className="form-group">
 
-        <label htmlFor="password">Password <br />
-            <Field as="input" id="password" type="password" name="password"  className='form-control' />
+        <label htmlFor="password"><span className="labez">Password</span> <br />
+            <Field as="input" id="password" type="password" name="password"  ariaDescribedby="emailHelp"  className='form-control' />
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
@@ -73,7 +73,7 @@ const StylistLogin = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    email: Yup.string().required("ehhh not so good fr..."),
+    email: Yup.string().required("Please type a valid email"),
 
     password: Yup.string().required("You need the Password")
   }),
