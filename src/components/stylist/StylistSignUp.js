@@ -40,23 +40,12 @@ let stylist = {
 
 
 
-const Btn = styled.button`
-flex: 0.6;
-	color:#fff;
-    font-weight:bolder;
-    width:100%;
-    border:none;
-    border-radius:10px;
-    background-color: #000;
-	padding:10px;
-	font-size:3rem;
-	-webkit-text-stroke:.8px whitesmoke;
-    cursor:pointer;
-    transition:.5s ease-in;
+  const btnExtraStyles = {
+    fontWeight:"bolder",
+    boxShadow:"0 0 5px #3f3f3f",
+    backgroundColor:'rgb(220, 35, 96)',   
+}
 
-
-`
- 
 
 const Row = styled.div`
 flex:1;
@@ -220,7 +209,7 @@ const Stylist = ({values,errors,touched,status}) =>{
        
       
         <div className="form-group">
-        <Button type='submit' className='btn btn-primary'>Register</Button>
+        <Button type='submit' className='btn btn-danger'  style={btnExtraStyles}>Register</Button>
         </div>
     </Form>
    
