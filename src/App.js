@@ -11,6 +11,9 @@ import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import Question from './SignupOrSignin';
+
+
 function App() {
   return (
     <div className="App">
@@ -21,11 +24,12 @@ function App() {
       {/* <SignUp />*/}
       {/* Private Route */}
 
+
       <Switch>
         <Route path="/stylist/home" component={StylistHome} />
         <Route path="/customer/home" component={CustomerHome} />
         <Route path="/logout" component={Logout} />
-        <Route path="/" component={Login} />
+        <Route path="/" component={Question} />
       </Switch>
     </div>
   );
