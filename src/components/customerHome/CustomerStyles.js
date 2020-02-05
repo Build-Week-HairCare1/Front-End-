@@ -328,7 +328,7 @@ header {
 
 //add review form
 
-.add-form-container {
+.add-form-container, .edit-form-container {
     height: calc(100% - 40px);
  
     
@@ -383,6 +383,13 @@ header {
         .image {
             color: white;
             padding: 5px 0px;
+        }
+
+        textarea {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.4rem;
+            width: 100%;
         }
     }
 

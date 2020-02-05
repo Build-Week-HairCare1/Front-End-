@@ -14,11 +14,22 @@ const initialState = {
     state: "CA",
     reviews: [
       {
+        id: 0,
         title: "test review",
         description: "test description",
         stars: 0,
         stylist: "test stylist",
         customer: "test customer",
+        photo_url: ""
+      },
+
+      {
+        id: 1,
+        title: "test review 2",
+        description: "test description 2",
+        stars: 3,
+        stylist: "test stylist 2",
+        customer: "test customer 2",
         photo_url: ""
       }
     ]

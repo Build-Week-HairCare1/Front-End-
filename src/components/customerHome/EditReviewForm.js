@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-
-// action creator
-import { addReview } from "../../actions";
+import { useHistory } from "react-router-dom";
 
 // rating from material ui
 import { Rating } from "@material-ui/lab";
 
-const AddReviewForm = props => {
-  const { business, data, addReview } = props;
-
-  let initialFormState = {
+const EditReviewForm = props => {
+  const history = useHistory();
+  const { reviewToEdit } = props;
+  const initialFormState = {
     title: "",
     description: "",
     stars: 0,
@@ -22,14 +19,10 @@ const AddReviewForm = props => {
   const [review, setReview] = useState(initialFormState);
 
   useEffect(() => {
-    if (business) {
-      setReview({
-        ...initialFormState,
-        stylist: business.name,
-        customer: `${data.first_name} ${data.last_name}`
-      });
+    if (reviewToEdit) {
+      setReview(reviewToEdit);
     } else {
-      props.history.push("/customer/home/search");
+      history.push("/customer/home");
     }
   }, []);
 
@@ -51,10 +44,10 @@ const AddReviewForm = props => {
   };
 
   return (
-    <div className="add-form-container">
+    <div className="edit-form-container">
       <form onSubmit={handleSubmit} className="add-form">
         <div className="ind-field">
-          <h2>Add Review</h2>
+          <h2>Edit Review</h2>
         </div>
         <div className="ind-field">
           <label htmlFor="stylist">Name of Business</label>
@@ -125,17 +118,11 @@ const AddReviewForm = props => {
         </div>
 
         <button type="submit" className="add-btn">
-          Add Review
+          Edit Review
         </button>
       </form>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    data: state.customerReducer.data
-  };
-};
-
-export default connect(mapStateToProps, { addReview })(AddReviewForm);
+export default EditReviewForm;
