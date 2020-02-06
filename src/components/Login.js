@@ -102,10 +102,10 @@ const Login = () =>{
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
   <li className="nav-item">
-<NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/login/:customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
   </li>
   <li className="nav-item">
-    <NavLink to='/stylistLogin'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
+    <NavLink to='/login/:stylist/'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
   </li>
   <li className="nav-item">
     <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign In</a>
@@ -113,8 +113,8 @@ const Login = () =>{
 </ul>
 
 <FormBox>
-   <Route exact path="/" component={CustomerLogin}/>
-                         <Route  path="/stylistLogin" component={StylistLogin}/>
+   <Route path="/login/:customer" component={CustomerLogin}/>
+                         <Route exact path="/login/:stylist/" component={StylistLogin}/>
 </FormBox>
       
 

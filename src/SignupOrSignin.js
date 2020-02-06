@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Route, NavLink} from 'react-router-dom'
-import Login from './components/Login'
-import SignUp from './components/SignUp'
+import {Route, NavLink,Switch} from 'react-router-dom'
+import CustomerLogin from './components/customer/CustomerLogin';
+import CustomerSignUp from './components/customer/CustomerSignUp'
+import StylistLogIn from './components/stylist/StylistLogin';
+import StylistSignUp from './components/stylist/StylistSignUp';
 
 
 const Box = styled.div`
@@ -10,10 +12,10 @@ position:absolute;
 display:flex;
 width:100%;
 height:100%;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 padding:0;
-grid-gap:100px;
 border-top:none;
     @media(max-width:500px){
       width:100%;
@@ -39,6 +41,39 @@ max-height:800px;
 `;
 
 
+
+
+const FormBox = styled.div`
+display:flex;
+color:azure;
+width:500px;
+min-height:500px;
+max-height:750px;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+margin:0;
+paddinng:0;
+grid-gap:20px;
+background-color:rgba(0,0,0,.8);
+box-shadow:0 0 10px #000;
+border-radius:10px;
+border-top-left-radius:0;
+border-top-right-radius:0;
+
+        @media screen and (max-width:500px){
+            width:100%;
+        }
+`;
+
+
+const Row = styled.div`
+flex:1;
+display:flex;
+z-index:24;
+`;
+
+
 const Button = styled.button``;
 
 
@@ -47,11 +82,17 @@ export default function PromptUser(){
         <Box>
            
             
-                    <Box> <NavLink to="/login">  <Button className="btnzz">Login</Button></NavLink>
-            <NavLink to="/signup"><Button className="btnz">Signup</Button></NavLink></Box>
+                    <Row> <NavLink to="/login/customer">  <Button className="btnzz">Login</Button></NavLink>
+            <NavLink to="/signup/customer"><Button className="btnz">Signup</Button></NavLink></Row>
                     
-            <Route exact path="/signup" component={SignUp}/>
-            <Route exact path="/login" component={Login}/>
+
+                    <Switch>
+                        <Route exact path="/login/customer" component={CustomerLogin}/>
+            <Route exact path="/signup/customer" component={CustomerSignUp}/>
+            <Route exact path="/login/stylist" component={StylistLogIn}/>
+            <Route exact path="/signup/stylist" component={StylistSignUp}/>
+                    </Switch>
+            
              
         </Box>
        
