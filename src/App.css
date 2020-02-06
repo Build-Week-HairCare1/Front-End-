@@ -55,8 +55,10 @@ overflow: hidden;
 }
 
 .nav-tabs{
+  height:100%;
   text-align:right;
-    background-color:rgba(0,0,0,.8);
+  background-color:rgba(0,0,0,.8);
+
     z-index: 24;
  width:500px;
  border-radius:10px;
@@ -149,7 +151,8 @@ overflow: hidden;
 
 @media screen and (max-width:500px){
             
-  
+
+
 .btnzz,.btnz{
   font-size: 2rem;
 }
@@ -174,8 +177,20 @@ overflow: hidden;
 
 @media screen and (max-width:900px) and (min-width:500px)
 and (max-height:500px){
-            
+          
   
+  #root{
+    height:1000px;
+    overflow-y: scroll;
+  }
+
+  .App{
+    overflow-y: scroll;
+
+  }
+          
+
+
   .btnzz,.btnz{
     font-size: 2.5rem;
   }

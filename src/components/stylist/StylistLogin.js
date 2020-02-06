@@ -32,16 +32,13 @@ const btnExtraStyles = {
   
   @media(max-width:900px) and (min-width:500px) and (max-height:500px){
   width:100%;
-  min-height:700px;
-  max-height:800px;
-  }
+height:100%;
+}
   
   
   
   @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
   width:100%;
-  min-height:700px;
-  max-height:800px;
   }
   
   `;
@@ -71,6 +68,23 @@ const btnExtraStyles = {
           @media screen and (max-width:500px){
               width:100%;
           }
+
+          @media screen and (max-width:500px){
+            background-color:rgba(0,0,0,0);
+            width:100%;
+                    }
+            
+                    
+            @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+            background-color:rgba(0,0,0,0);
+            width:100%;
+                }
+                
+                
+                
+                @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+                
+                }
   `;
   
   
@@ -118,7 +132,7 @@ const Stylist = ({values,errors,touched,status}) =>{
     return(
               
        <Box>
-       <PageTitle>Signup Here</PageTitle>
+       <PageTitle>Login Here</PageTitle>
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
 <li className="nav-item">

@@ -46,16 +46,13 @@ let customer = {
   
   @media(max-width:900px) and (min-width:500px) and (max-height:500px){
   width:100%;
-  min-height:700px;
-  max-height:800px;
-  }
+height:100%;
+}
   
   
   
   @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
   width:100%;
-  min-height:700px;
-  max-height:800px;
   }
   
   `;
@@ -82,9 +79,24 @@ let customer = {
   border-top-left-radius:0;
   border-top-right-radius:0;
   
+
+
           @media screen and (max-width:500px){
-              width:100%;
-          }
+            background-color:rgba(0,0,0,0);
+            width:100%;
+                    }
+            
+                    
+            @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+            background-color:rgba(0,0,0,0);
+            width:100%;
+                }
+                
+                
+                
+                @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+                
+                }
   `;
   
   
