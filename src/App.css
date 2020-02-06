@@ -135,7 +135,8 @@ background-color: #000;
   font-weight:bolder;
   color:#000;
   border:none;
-  text-shadow:0 0 5px #fff;
+  text-shadow:0 0 5px #000;
+  -webkit-text-fill-color:1px azure;
 }
 
 
@@ -146,7 +147,17 @@ background-color: #000;
   font-weight:bolder;
   color:#000;
   border:none;
-  text-shadow:0 0 5px #fff;
+  text-shadow:0 0 5px #000;
+  -webkit-text-fill-color:1px azure;
+}
+
+.btnzz:hover,.btnz:hover{
+  color: #000;
+}
+
+.btnzzActive{
+  color:red;
+  -webkit-text-stroke:.5px #fff;
 }
 
 form{
