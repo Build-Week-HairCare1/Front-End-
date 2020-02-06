@@ -96,6 +96,7 @@ grid-gap:0px;
 const PageTitle = styled.h1`
 font-size:5rem;
   color:#000;
+  text-shadow:0 0 10px azure;
 
 
 
@@ -146,7 +147,7 @@ const Stylist = ({values,errors,touched,status}) =>{
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
 <li className="nav-item">
-<NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
 </li>
 <li className="nav-item">
   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>

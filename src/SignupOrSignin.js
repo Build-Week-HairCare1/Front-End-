@@ -85,8 +85,7 @@ const Row = styled.div`
 flex:1;
 display:flex;
 z-index:24;
-
-
+font-weight:bolder;
 @media(max-width:500px){
     
   }
@@ -108,7 +107,7 @@ export default function PromptUser(){
         <Box>
            
             
-                    <Row> <NavLink to="/login/customer" className="btnzz">Login</NavLink>
+                    <Row> <NavLink to="/" className="btnzz">Login</NavLink>
                     OR
             <NavLink to="/signup/customer" className="btnz">Signup</NavLink></Row>
                     
@@ -116,7 +115,7 @@ export default function PromptUser(){
                     <FormBox>
 
                     <Switch>
-                        <Route exact path="/login/customer" component={CustomerLogin}/>
+                        <Route exact path="/" component={CustomerLogin}/>
             <Route exact path="/signup/customer" component={CustomerSignUp}/>
             <Route exact path="/login/stylist" component={StylistLogIn}/>
             <Route exact path="/signup/stylist" component={StylistSignUp}/>
