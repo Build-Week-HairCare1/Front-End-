@@ -76,7 +76,6 @@ border-top-right-radius:0;
         @media(max-width:900px) and (min-width:500px) and (max-height:500px){
             width:100%;
             min-height:100%;
-            max-height:100%;
         }
 
 `;

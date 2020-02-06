@@ -4,6 +4,8 @@ import styled from "styled-components";
 import * as Yup from "yup";
 import {Button, FormGroup, Label, Input} from 'reactstrap'
 import {NavLink} from 'react-router-dom'
+import Axios from 'axios';
+
 
 const btnExtraStyles = {
   fontWeight:"bolder",
@@ -144,13 +146,13 @@ const Stylist = ({values,errors,touched,status}) =>{
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
 <li className="nav-item">
-<NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
 </li>
 <li className="nav-item">
-  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
+  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign In</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Sign In</a>
 </li>
 </ul>
 
@@ -219,7 +221,15 @@ const StylistLogin = withFormik({
   }),
 
   handleSubmit(values, { setStatus, resetForm }) {
-    //wait for team...whether axios or what and also where to an with what?
+    Axios.post("https://haircare1backend.herokuapp.com/api/stylists/login",values)
+    .then(res=>{
+        setStatus(values)
+        resetForm()
+        console.log(res);
+        
+        
+    }) 
+  
   }
 })(Stylist);
 

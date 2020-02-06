@@ -13,6 +13,7 @@ html{
   background-size:cover;
   background-image:url("../src/hairsalon.jpg");
   background-repeat:no-repeat;
+  background-position:center;
   font-family: ‘Roboto’, sans-serif;
 font-family: ‘Playfair Display’, serif; 
 overflow-x: hidden;
@@ -148,9 +149,23 @@ background-color: #000;
   text-shadow:0 0 5px #fff;
 }
 
-
+form{
+  z-index:24;
+}
 @media screen and (max-width:500px){
-            .nav-tabs{
+           
+  html{
+    background-size:cover;
+    overflow: hidden;
+  }
+  
+
+  #root{
+    overflow-y:scroll;
+  }
+  
+  
+  .nav-tabs{
               width:100%;
             }
 
@@ -179,7 +194,9 @@ background-color: #000;
 
 @media screen and (max-width:900px) and (min-width:500px)
 and (max-height:500px){
-          
+        
+   
+
 form{
   padding:0;
   margin-bottom:200px;
@@ -227,4 +244,21 @@ form{
     font-size:1rem;
   }
 
+}
+
+
+
+
+@media screen and (max-width:1380px) and (max-height:1380px) and (min-height:700px) and (min-width:700px){
+  html{
+    background-size:cover;
+    overflow: hidden;
+  }
+  
+form{
+  z-index:24;
+}
+  #root{
+    overflow-y:scroll;
+  }
 }

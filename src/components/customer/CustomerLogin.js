@@ -152,10 +152,10 @@ const Customer = ({values,errors,touched,status}) =>{
  
  <ul className="nav nav-tabs" id="myTab" role="tablist">
  <li className="nav-item">
- <NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
+ <NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
  </li>
  <li className="nav-item">
-   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
+   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
  </li>
  <li className="nav-item">
    <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign In</a>
@@ -171,7 +171,7 @@ const Customer = ({values,errors,touched,status}) =>{
              <div className="form-group">
                 <Row>
                   <label htmlFor="email"><span className="labez">Email</span> <br />
-            <Field as="input" id="email" type="email" name="email"   ariaDescribedby="emailHelp"  className='form-control' />
+            <Field as="input" id="email" type="email" name="email"  className='form-control' required/>
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
@@ -189,7 +189,7 @@ const Customer = ({values,errors,touched,status}) =>{
                 <Row>
 
         <label htmlFor="password"><span className="labez">Password</span> <br />
-            <Field as="input" id="password" type="password" name="password"  ariaDescribedby="emailHelp"  className='form-control' />
+            <Field as="input" id="password" type="password" name="password"   className='form-control' required/>
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
@@ -256,7 +256,7 @@ const CustomerLogin = withFormik({
 console.log(values);
 
 
-axios.post("https://haircare1backend.herokuapp.com//api/customers/login ",values)
+axios.post("https://haircare1backend.herokuapp.com/api/customers/login ",values)
     .then(res=>{
         console.log(res)
 

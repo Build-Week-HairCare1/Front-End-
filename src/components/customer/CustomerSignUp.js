@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 import {withFormik,Form,Field} from 'formik';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import axios from 'axios';
+import Axios from 'axios';
 import {Button} from 'reactstrap'
 
  
@@ -358,8 +358,14 @@ const CustomerSignUp = withFormik({
 
     handleSubmit(values, {setStatus , resetForm}){
         
-//wait for team...whether axios or what and also where to an with what?
-//token to be accepted as a customer account
+        Axios.post("https://haircare1backend.herokuapp.com/api/customers",values)
+        .then(res=>{
+            setStatus(values)
+            resetForm()
+            console.log(res);
+            
+            
+        }) 
         console.log(values)
       
     }
