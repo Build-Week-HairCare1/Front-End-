@@ -145,12 +145,12 @@ const Stylist = ({values,errors,touched,status}) =>{
        <Box>
        <PageTitle>Login Here</PageTitle>
 
-<ul className="nav nav-tabs" id="myTab" role="tablist">
+<ul className="nav nav-tabs" role="tablist">
 <li className="nav-item">
-<NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"  role="tab" >Customer</NavLink>
 </li>
 <li className="nav-item">
-  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
+  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
   <a className="nav-link disabled" href="#" tabIndex="-1" >Sign In</a>
@@ -166,13 +166,13 @@ const Stylist = ({values,errors,touched,status}) =>{
                 <Row>
                   <label htmlFor="email"><span className="labez">Email</span> <br />
             <Field as="input" id="email" type="email" name="email"  
-             ariaDescribedby="emailHelp"  className='form-control' />
+             aria-describedby="emailHelp"  className='form-control' />
             {
                 touched.email && errors.email &&(
                 <p>{errors.email}</p>
                 )
             }
-            <span  id="emailHelp" className="form-text text-muted"></span>
+            <span  className="form-text text-muted"></span>
         </label>
                 </Row>
 
@@ -185,7 +185,7 @@ const Stylist = ({values,errors,touched,status}) =>{
 
         <label htmlFor="password"><span className="labez">Password</span> <br />
             <Field as="input" id="password" type="password" name="password" 
-             ariaDescribedby="emailHelp"  className='form-control' />
+             aria-describedby="emailHelp"  className='form-control' />
             {
                 touched.password && errors.password &&(
                 <p>{errors.password}</p>
