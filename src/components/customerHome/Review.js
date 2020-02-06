@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 
 import { Rating } from "@material-ui/lab";
 
+import { deleteReview } from "../../actions";
+
 const Review = props => {
   const { reviewId } = useParams();
-  const { data, selectedReview } = props;
+  const { data, selectedReview, deleteReview } = props;
 
   const [review, setReview] = useState({});
 
@@ -17,8 +19,6 @@ const Review = props => {
     );
     setReview(newRev[0]);
   }, []);
-
-  console.log(review);
 
   return (
     <div className="review-container">
@@ -36,7 +36,7 @@ const Review = props => {
 
       <div className="btn-container">
         <button onClick={() => selectedReview(review)}>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => deleteReview(review.id)}>Delete</button>
       </div>
     </div>
   );
@@ -48,4 +48,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(Review);
+export default connect(mapStateToProps, { deleteReview })(Review);

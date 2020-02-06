@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 // rating from material ui
 import { Rating } from "@material-ui/lab";
 
+// action creator
+import { editReview } from "../../actions";
+
 const EditReviewForm = props => {
   const history = useHistory();
   const { reviewToEdit } = props;
@@ -40,6 +43,7 @@ const EditReviewForm = props => {
     e.preventDefault();
     console.log(review);
     // addReview action will be here grabbing review object
+    editReview(review);
     props.history.push("/customer/home/");
   };
 

@@ -1,5 +1,5 @@
 // action types
-import { ADD_REVIEW, FETCHING } from "../actions";
+import { ADD_REVIEW, FETCHING, EDIT_REVIEW, DELETE_REVIEW } from "../actions";
 
 const initialState = {
   isFetching: false,
@@ -50,6 +50,32 @@ export const customerReducer = (state = initialState, action) => {
         data: {
           ...state.data,
           reviews: [...state.data.reviews, action.payload]
+        },
+        isFetching: false
+      };
+
+    case EDIT_REVIEW:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          reviews: state.data.reviews.map(review => {
+            if (review.id === action.payload.id) {
+              return action.payload;
+            } else {
+              return review;
+            }
+          })
+        },
+        isFetching: false
+      };
+
+    case DELETE_REVIEW:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          reviews: action.payload
         },
         isFetching: false
       };
