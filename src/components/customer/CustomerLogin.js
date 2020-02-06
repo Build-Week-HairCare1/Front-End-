@@ -37,6 +37,9 @@ border-top:none;
 @media(max-width:900px) and (min-width:500px) and (max-height:500px){
 width:100%;
 height:100%;
+justify-content:flex-start;
+align-items:flex-start;
+
 }
 
 
@@ -70,19 +73,22 @@ background-color:rgba(0,0,0,.8);
 border-top-right-radius:0;
 
         @media screen and (max-width:500px){
-background-color:rgba(0,0,0,0);
 width:100%;
+min-height:100%;
+max-height:100%;
         }
 
         
 @media(max-width:900px) and (min-width:500px) and (max-height:500px){
-background-color:rgba(0,0,0,0);
 width:100%;
+            min-height:100%;
+max-height:100%;
     }
     
     
     
     @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+grid-gap:0px;
     
     }
 
@@ -104,6 +110,13 @@ font-family: ‘Playfair Display’, serif;
 
             @media(max-width:500px){
               display:none;
+            }
+
+            @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+              display:none;
+                
+
+
             }
 `;
 

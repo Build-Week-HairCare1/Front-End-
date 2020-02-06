@@ -23,9 +23,8 @@ border-top:none;
 
     @media(max-width:500px){
       width:100%;
-    overflow-y:auto;
-    margin-top:100px;
-        grid-gap:100px
+    min-height:100%;
+    max-height:100%;
     }
 
 
@@ -33,15 +32,15 @@ border-top:none;
 
 @media(max-width:900px) and (min-width:500px) and (max-height:500px){
     width:100%;
-    height:100%;
-    margin-top:80px;
+    min-height:80%;
+    max-height:80%;
     
 }
 
 
 
 @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
-
+    grid-gap:0px
 }
 
 `;
@@ -68,16 +67,16 @@ border-top-right-radius:0;
 
         @media screen and (max-width:500px){
             width:100%;
-            min-height:500px;
-            max-height:750px;
-            
-        }
+            min-height:100%;
+            max-height:100%;
+            background-color:rgba(0,0,0,1);
+
+}
 
         @media(max-width:900px) and (min-width:500px) and (max-height:500px){
             width:100%;
             min-height:100%;
             max-height:100%;
-
         }
 
 `;
@@ -90,7 +89,15 @@ z-index:24;
 
 
 @media(max-width:500px){
+    
   }
+
+
+
+
+  @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+    margin-top:100px;
+}
 `;
 
 
@@ -102,8 +109,9 @@ export default function PromptUser(){
         <Box>
            
             
-                    <Row> <NavLink to="/login/customer">  <Button className="btnzz">Login</Button></NavLink>
-            <NavLink to="/signup/customer"><Button className="btnz">Signup</Button></NavLink></Row>
+                    <Row> <NavLink to="/login/customer" className="btnzz">Login</NavLink>
+                    OR
+            <NavLink to="/signup/customer" className="btnz">Signup</NavLink></Row>
                     
 
                     <FormBox>
