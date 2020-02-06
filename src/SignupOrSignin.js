@@ -64,12 +64,13 @@ box-shadow:0 0 10px #000;
 border-radius:10px;
 border-top-left-radius:0;
 border-top-right-radius:0;
+-webkit-animation:intro 1.5s ease-in-out;
+animation:intro 1.5s ease-in-out;
 
         @media screen and (max-width:500px){
             width:100%;
             min-height:100%;
             max-height:100%;
-            background-color:rgba(0,0,0,1);
 
 }
 
@@ -99,7 +100,6 @@ font-weight:bolder;
 `;
 
 
-const Button = styled.button``;
 
 
 export default function PromptUser(){
