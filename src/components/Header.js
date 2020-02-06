@@ -15,7 +15,7 @@ const Header = () => {
 
       {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}
       <nav className="main-nav">
-        <a href="" id="home">
+        <a href="" id="home" className="special">
           Home
         </a>
         <a href="" id="team">

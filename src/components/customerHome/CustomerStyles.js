@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import bg from "../../hairsalon.jpg";
 
 export const CustomerStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
@@ -15,6 +16,11 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    background: url(${bg}) no-repeat center;
+    background-size: cover;
+}
+
 header {
     height: 8vh;
     display: flex;
@@ -22,22 +28,24 @@ header {
     align-items: center;
     padding: 20px;
 
-    h1 {
-        font-size: 3rem;
+    .logo {
+        width: 10%;
+        font-size: 4rem;
         font-family: 'Playfair Display', serif;
         font-weight: bold;
     }
 
     .main-nav {
-        width: 30%;
+        width: 20%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-evenly;
         align-items: center;
         padding: 10px 0;
+        font-family: 'Roboto', sans-serif;
         
 
         a {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             text-decoration: none;
             color: black;
             font-weight: 700;
@@ -45,6 +53,10 @@ header {
             &:hover {
                 text-decoration: underline;
             }
+        }
+
+        .special {
+            color: rgb(182, 45, 97);
         }
 
     }
@@ -73,14 +85,8 @@ header {
     flex-direction: column;
     padding: 10px;
     margin-top: 50px;
+    background: rgba(0, 0, 0, 0.6);
     
-
-    .edit-icon {
-        align-self: flex-end;
-        font-size: 1.8rem;
-        cursor: pointer;
-        margin-bottom: 10px;
-    }
 
     figure {
         height: 70%;
@@ -98,6 +104,7 @@ header {
     .info {
         width: 90%;
         text-align: center;
+        color: white;
 
         .name {
             font-size: 1.7rem;
@@ -119,9 +126,10 @@ header {
     width: 80%;
     height: 100%;
    
+   
 
     .dashboard-header {
-      
+       
         height: 40px;
         width: 30%;
         margin: 0 auto;
@@ -148,6 +156,8 @@ header {
 // dashboard content
 
 .dashboard-content {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -162,36 +172,49 @@ header {
 
     .review-card {
         border: 2px solid black;
+        border-radius: 10px;
         height: 42%;
         width: 18%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
         margin: 0 20px;
     }
 
     .card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+
         figure {
             width: 100%;
-            height: 70%;
+            height: 80%;
+            border-radius: 10px ;
+
 
             img {
                 height: 100%;
                 width: 100%;
                 object-position: center center;
                 object-fit: cover;
+                border-radius: 10px ;
             }
         }
 
         .info-container {
-            margin: 10px auto;
             width: 90%;
-            height: 40%;
+            height: 20%;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
+
+            a {
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
 
         }
     }
@@ -337,12 +360,13 @@ header {
         border: 2px solid black;
         background: rgba(0, 0, 0, 0.7);
         margin: 10px auto;
-        width: 40%;
+        width: 35%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
         padding: 10px;
+        border-radius: 10px;
     }
 
     .ind-field {
