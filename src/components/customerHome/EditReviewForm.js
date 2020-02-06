@@ -7,6 +7,9 @@ import { Rating } from "@material-ui/lab";
 // action creator
 import { editReview } from "../../actions";
 
+// uploadcare widget
+import { Widget } from "@uploadcare/react-widget";
+
 const EditReviewForm = props => {
   const history = useHistory();
   const { reviewToEdit } = props;
@@ -18,6 +21,7 @@ const EditReviewForm = props => {
     customer: "",
     photo_url: ""
   };
+  const uploadCareKey = "ccb1d2ef9d857fc61c79";
 
   const [review, setReview] = useState(initialFormState);
 
@@ -43,8 +47,8 @@ const EditReviewForm = props => {
     e.preventDefault();
     console.log(review);
     // addReview action will be here grabbing review object
-    editReview(review);
-    props.history.push("/customer/home/");
+    // editReview(review);
+    // props.history.push("/customer/home/");
   };
 
   return (
@@ -88,13 +92,24 @@ const EditReviewForm = props => {
 
         <div className="ind-field">
           <label htmlFor="photo"></label>
-          <input
+          {/* <input
             className="image"
             type="file"
             name="photo_url"
             id="photo"
             value={review.photo_url}
             onChange={handleChange}
+          /> */}
+          <Widget
+            publicKey={uploadCareKey}
+            id="file"
+            onChange={info => {
+              setReview({
+                ...review,
+                photo_url: info.originalUrl
+              });
+            }}
+            className="widget"
           />
         </div>
 

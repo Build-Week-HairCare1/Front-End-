@@ -7,8 +7,13 @@ import { addReview } from "../../actions";
 // rating from material ui
 import { Rating } from "@material-ui/lab";
 
+// uploadcare widget
+import { Widget } from "@uploadcare/react-widget";
+
 const AddReviewForm = props => {
   const { business, data, addReview } = props;
+
+  const uploadCareKey = "ccb1d2ef9d857fc61c79";
 
   let initialFormState = {
     title: "",
@@ -91,13 +96,24 @@ const AddReviewForm = props => {
 
         <div className="ind-field">
           <label htmlFor="photo"></label>
-          <input
+          {/* <input
             className="image"
             type="file"
             name="photo_url"
             id="photo"
             value={review.photo_url}
             onChange={handleChange}
+          /> */}
+          <Widget
+            publicKey={uploadCareKey}
+            id="file"
+            onChange={info => {
+              setReview({
+                ...review,
+                photo_url: info.originalUrl
+              });
+            }}
+            className="widget"
           />
         </div>
 

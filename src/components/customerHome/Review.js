@@ -11,6 +11,7 @@ const Review = props => {
   const { data, selectedReview, deleteReview } = props;
 
   const [review, setReview] = useState({});
+  console.log(review);
 
   useEffect(() => {
     //   make axios call to fetch data when ready
@@ -22,16 +23,18 @@ const Review = props => {
 
   return (
     <div className="review-container">
-      <figure>
-        <img src={review.photo_url} alt={review.title} />
-      </figure>
+      <div className="row-container">
+        <figure>
+          <img src={review.photo_url} alt={review.title} />
+        </figure>
 
-      <div className="review-details">
-        <h2>Title: {review.title}</h2>
-        <p>Description: {review.description}</p>
-        <p>
-          Rating: <Rating value={review.stars} readOnly />
-        </p>
+        <div className="review-details">
+          <h2>Title: {review.title}</h2>
+          <p>Description: {review.description}</p>
+          <p>
+            Rating: <Rating value={parseInt(review.stars, 10)} readOnly />
+          </p>
+        </div>
       </div>
 
       <div className="btn-container">
