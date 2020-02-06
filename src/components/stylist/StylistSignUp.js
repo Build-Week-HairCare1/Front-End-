@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import * as Yup from 'yup';
 import {Button} from 'reactstrap'
 import {NavLink} from 'react-router-dom' 
+import Axios from 'axios';
 
 
  
@@ -38,6 +39,7 @@ let stylist = {
 
 
 
+
   const Box = styled.div`
   position:absolute;
   display:flex;
@@ -57,16 +59,16 @@ let stylist = {
   
   @media(max-width:900px) and (min-width:500px) and (max-height:500px){
   width:100%;
-  min-height:700px;
-  max-height:800px;
+  height:100%;
+  justify-content:flex-start;
+  align-items:flex-start;
+  
   }
   
   
   
   @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
-  width:100%;
-  min-height:700px;
-  max-height:800px;
+  
   }
   
   `;
@@ -87,36 +89,60 @@ let stylist = {
   margin:0;
   paddinng:0;
   grid-gap:20px;
-  background-color:rgba(0,0,0,.8);
   box-shadow:0 0 10px #000;
   border-radius:10px;
   border-top-left-radius:0;
+  background-color:rgba(0,0,0,.8);
   border-top-right-radius:0;
   
           @media screen and (max-width:500px){
-              width:100%;
+  width:100%;
+  min-height:100%;
+  max-height:100%;
           }
+  
+          
+  @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+  width:100%;
+              min-height:100%;
+  max-height:100%;
+      }
+      
+      
+      
+      @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+  grid-gap:0px;
+      
+      }
+  
+          
   `;
   
   
   
   const PageTitle = styled.h1`
-  font-size:5rem;
-    color:#000;
-  
-  
-  
-    font-family: ‘Roboto’, sans-serif;
-  font-family: ‘Playfair Display’, serif; 
-  
-  
-  
-              @media(max-width:500px){
-                display:none;
-              }
-  `;
-  
+font-size:5rem;
+  color:#000;
+  text-shadow:0 0 10px azure;
 
+
+
+  font-family: ‘Roboto’, sans-serif;
+font-family: ‘Playfair Display’, serif; 
+
+
+
+            @media(max-width:500px){
+              display:none;
+            }
+
+            @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+              display:none;
+                
+
+
+            }
+`;
 // const Row = styled.div`
 // flex:1;
 // display:flex;
@@ -195,7 +221,7 @@ const Stylist = ({values,errors,touched,status}) =>{
   <NavLink to='/signup/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign In</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign Up</a>
 </li>
 </ul>
 
@@ -210,34 +236,26 @@ const Stylist = ({values,errors,touched,status}) =>{
                 <Row>
 
 <label htmlFor="name"> 
-            <Field as="input" id="name" type="text" maxLength="10" name="name"  ariaDescribedby="nameHelp" className="form-control"  placeholder="First Name" required/>
-            {
-                touched.name && errors.name &&(
-                <p id="nameHelp" className="form-text text-muted">{errors.name}</p>
-                )
-            }
+            <Field as="input" id="name" type="text" maxLength="10" name="name"   className="form-control"  placeholder="First Name" required/>
+          
         </label>
 
         <label htmlFor="last"> 
-            <Field as="input" id="last" type="text" maxLength="10" name="last" className="form-control"  ariaDescribedby="lastHelp"    placeholder="Last Name"required/>
-            {
-                touched.last && errors.last &&(
-                <p  id="lastHelp" className="form-text text-muted">{errors.last}</p>
-                )
-            }
+            <Field as="input" id="last" type="text" maxLength="10" name="last" className="form-control"      placeholder="Last Name" required/>
+          
         </label>
                 </Row>
                 </div>
 
                 <div className="form-group">
                      <label htmlFor="email"> 
-            <Field as="input" id="email" type="email" name="email" className="form-control"   ariaDescribedby="emailHelp"  placeholder="Example@email.com"required/>
+            <Field as="input" id="email" type="email" name="email" className="form-control"     placeholder="Example@email.com" required/>
             {
                 touched.email && errors.email &&(
-                <p  id="emailHelp" className="form-text text-muted">{errors.email}</p>
+                <p  id className="form-text text-muted">{errors.email}</p>
                 )
             }
-            <span  id="emailHelp" className="form-text text-muted"></span>
+            <span  id className="form-text text-muted"></span>
         </label>
                 </div>
                 
@@ -260,20 +278,12 @@ const Stylist = ({values,errors,touched,status}) =>{
                     <Row>
             <label htmlFor="salon"> 
             <Field as="input" id="salon" type="text" maxLength="10" name="salon" className="form-control"  placeholder="Salon or n/a" required/>
-            {
-                touched.salon && errors.salon &&(
-                <p>{errors.salon}</p>
-                )
-            }
+           
         </label>
 
         <label htmlFor="specialty"> 
             <Field as="input" id="specialty" type="text" maxLength="10" name="specialty" className="form-control"  placeholder="Specialty" required/>
-            {
-                touched.specialty && errors.specialty &&(
-                <p>{errors.specialty}</p>
-                )
-            }
+          
         </label>
         
             </Row>
@@ -282,11 +292,7 @@ const Stylist = ({values,errors,touched,status}) =>{
             <div className="form-group">
             <label htmlFor="yrs">
             <Field as="input" id="yrs" type="number" min="0" max="30" name="yrs" className="form-control"  placeholder="Years of experience" required/>
-            {
-                touched.yrs && errors.yrs &&(
-                <p>{errors.yrs}</p>
-                )
-            }
+           
         </label>
                 </div>
           
@@ -294,15 +300,11 @@ const Stylist = ({values,errors,touched,status}) =>{
                 <div className="form-group">
                      <Row>
   <label htmlFor="password">  
-            <Field as="input" id="password" type="password" name="password"  className="form-control"  ariaDescribedby="pwordtHelp"  placeholder="Password" required/>
-            {
-                touched.password && errors.password &&(
-                <p  id="pwordtHelp" className="form-text text-muted">{errors.password}</p>
-                )
-            }
+            <Field as="input" id="password" type="password" name="password"  className="form-control"   placeholder="Password" required/>
+           
         </label>
      <label htmlFor="repassword"> 
-            <Field as="input" id="repassword" type="password" name="repassword" className="form-control"  ariaDescribedby="rpwordtHelp"  onChange={MatchMe} placeholder="Re-Type Password " required/>
+            <Field as="input" id="repassword" type="password" name="repassword" className="form-control"    onChange={MatchMe} placeholder="Re-Type Password " required/>
             {
                 touched.repassword && errors.repassword &&(
                 <p id="rpwordtHelp" className="form-text text-muted">{errors.repassword}</p>
@@ -371,8 +373,15 @@ const StylistSignUp = withFormik({
 
     handleSubmit(values, {setStatus , resetForm}){
         
-//wait for team...whether axios or what and also where to an with what?
-//token to be accepted as a stylist account
+
+        Axios.post("https://haircare1backend.herokuapp.com/api/stylists",values)
+        .then(res=>{
+            setStatus(values)
+            resetForm()
+            console.log(res);
+            
+            
+        }) 
 
 console.log(values);
 

@@ -11,31 +11,36 @@ const Box = styled.div`
 position:absolute;
 display:flex;
 width:100%;
-height:100%;
+min-height:500px;
+max-height:750px;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 padding:0;
 border-top:none;
+
+
+
     @media(max-width:500px){
       width:100%;
+    min-height:100%;
+    max-height:100%;
     }
 
 
 
 
 @media(max-width:900px) and (min-width:500px) and (max-height:500px){
-width:100%;
-min-height:700px;
-max-height:800px;
+    width:100%;
+    min-height:80%;
+    max-height:80%;
+    
 }
 
 
 
 @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
-width:100%;
-min-height:700px;
-max-height:800px;
+    grid-gap:0px
 }
 
 `;
@@ -47,8 +52,7 @@ const FormBox = styled.div`
 display:flex;
 color:azure;
 width:500px;
-min-height:500px;
-max-height:750px;
+height:100%;
 flex-direction:row;
 justify-content:center;
 align-items:center;
@@ -63,7 +67,17 @@ border-top-right-radius:0;
 
         @media screen and (max-width:500px){
             width:100%;
+            min-height:100%;
+            max-height:100%;
+            background-color:rgba(0,0,0,1);
+
+}
+
+        @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+            width:100%;
+            min-height:100%;
         }
+
 `;
 
 
@@ -71,6 +85,17 @@ const Row = styled.div`
 flex:1;
 display:flex;
 z-index:24;
+font-weight:bolder;
+@media(max-width:500px){
+    
+  }
+
+
+
+
+  @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+    margin-top:100px;
+}
 `;
 
 
@@ -82,16 +107,21 @@ export default function PromptUser(){
         <Box>
            
             
-                    <Row> <NavLink to="/login/customer">  <Button className="btnzz">Login</Button></NavLink>
-            <NavLink to="/signup/customer"><Button className="btnz">Signup</Button></NavLink></Row>
+                    <Row> <NavLink to="/" className="btnzz">Login</NavLink>
+                    OR
+            <NavLink to="/signup/customer" className="btnz">Signup</NavLink></Row>
                     
 
+                    <FormBox>
+
                     <Switch>
-                        <Route exact path="/login/customer" component={CustomerLogin}/>
+                        <Route exact path="/" component={CustomerLogin}/>
             <Route exact path="/signup/customer" component={CustomerSignUp}/>
             <Route exact path="/login/stylist" component={StylistLogIn}/>
             <Route exact path="/signup/stylist" component={StylistSignUp}/>
                     </Switch>
+                    </FormBox>
+
             
              
         </Box>
