@@ -213,15 +213,15 @@ const Stylist = ({values,errors,touched,status}) =>{
        <Box>
        <PageTitle>Signup Here</PageTitle>
 
-<ul className="nav nav-tabs" id="myTab" role="tablist">
+<ul className="nav nav-tabs"  role="tablist">
 <li className="nav-item">
-<NavLink to='/signup/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/signup/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab"  role="tab" >Customer</NavLink>
 </li>
 <li className="nav-item">
-  <NavLink to='/signup/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
+  <NavLink to='/signup/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab"  role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign Up</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" >Sign Up</a>
 </li>
 </ul>
 
@@ -235,13 +235,13 @@ const Stylist = ({values,errors,touched,status}) =>{
                     
                 <Row>
 
-<label htmlFor="name"> 
-            <Field as="input" id="name" type="text" maxLength="10" name="name"   className="form-control"  placeholder="First Name" required/>
+<label htmlFor="first_name"> 
+            <Field as="input" id="first_name" type="text" maxLength="10" name="first_name"   className="form-control"  placeholder="First Name" required/>
           
         </label>
 
-        <label htmlFor="last"> 
-            <Field as="input" id="last" type="text" maxLength="10" name="last" className="form-control"      placeholder="Last Name" required/>
+        <label htmlFor="last_name"> 
+            <Field as="input" id="last_name" type="text" maxLength="10" name="last_name" className="form-control"      placeholder="Last Name" required/>
           
         </label>
                 </Row>
@@ -252,10 +252,10 @@ const Stylist = ({values,errors,touched,status}) =>{
             <Field as="input" id="email" type="email" name="email" className="form-control"     placeholder="Example@email.com" required/>
             {
                 touched.email && errors.email &&(
-                <p  id className="form-text text-muted">{errors.email}</p>
+                <p className="form-text text-muted">{errors.email}</p>
                 )
             }
-            <span  id className="form-text text-muted"></span>
+            <span   className="form-text text-muted"></span>
         </label>
                 </div>
                 
@@ -307,10 +307,10 @@ const Stylist = ({values,errors,touched,status}) =>{
             <Field as="input" id="repassword" type="password" name="repassword" className="form-control"    onChange={MatchMe} placeholder="Re-Type Password " required/>
             {
                 touched.repassword && errors.repassword &&(
-                <p id="rpwordtHelp" className="form-text text-muted">{errors.repassword}</p>
+                <p className="form-text text-muted">{errors.repassword}</p>
                 )
             }
-            <span id="rpwordtHelp" className="form-text text-muted"></span>
+            <span className="form-text text-muted"></span>
         </label>
         </Row>
                 </div>
@@ -340,10 +340,13 @@ const StylistSignUp = withFormik({
          
 
         return{
-            name:props.name || "" ,
-            last:props.last || "",
+            first_name:props.first_name || "" ,
+            last_name:props.last || "",
             email:props.email || "" ,
-            password:props.password || "" ,
+            city:props.city || "" ,
+            state:props.state || "" ,
+            specialty:props.specialty || "" ,
+            salon:props.salon || "" ,
         }
     },
  
@@ -351,11 +354,11 @@ const StylistSignUp = withFormik({
 
     validationSchema: Yup.object().shape({
 
-        name: Yup.string().required(
+        first_name: Yup.string().required(
             "First Name Please..."
         ),
 
-        last: Yup.string().required(
+        last_name: Yup.string().required(
             "Last Name Please..."
         ),
      
@@ -365,6 +368,22 @@ const StylistSignUp = withFormik({
 
         password: Yup.string().required(
             "You need a Password"
+        ),
+
+        city: Yup.string().required(
+            "City PLease"
+        ),
+
+        state: Yup.string().required(
+            "State Please"
+        ),
+
+        specialty: Yup.string().required(
+            "Specialty Please"
+        ),
+
+        salon: Yup.string().required(
+            "Your Salon or Type 'N/A'"
         ),
 
         
