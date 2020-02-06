@@ -4,6 +4,8 @@ import styled from "styled-components";
 import * as Yup from "yup";
 import {Button, FormGroup, Label, Input} from 'reactstrap'
 import {NavLink} from 'react-router-dom'
+import Axios from 'axios';
+
 
 const btnExtraStyles = {
   fontWeight:"bolder",
@@ -12,85 +14,107 @@ const btnExtraStyles = {
   borderRadius:'0%',
   fontSize:"1.5rem",
 }
+  
+const Box = styled.div`
+position:absolute;
+display:flex;
+width:100%;
+height:100%;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:0;
+border-top:none;
+    @media(max-width:500px){
+      width:100%;
+    }
+
+
+
+
+@media(max-width:900px) and (min-width:500px) and (max-height:500px){
+width:100%;
+height:100%;
+justify-content:flex-start;
+align-items:flex-start;
+
+}
+
+
+
+@media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+
+}
+
+`;
+
+
+
+
+
+const FormBox = styled.div`
+display:flex;
+color:azure;
+width:500px;
+min-height:500px;
+max-height:750px;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+margin:0;
+paddinng:0;
+grid-gap:20px;
+box-shadow:0 0 10px #000;
+border-radius:10px;
+border-top-left-radius:0;
+background-color:rgba(0,0,0,.8);
+border-top-right-radius:0;
+
+        @media screen and (max-width:500px){
+width:100%;
+min-height:100%;
+max-height:100%;
+        }
+
+        
+@media(max-width:900px) and (min-width:500px) and (max-height:500px){
+width:100%;
+            min-height:100%;
+max-height:100%;
+    }
     
-  const Box = styled.div`
-  position:absolute;
-  display:flex;
-  width:100%;
-  height:100%;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:0;
-  border-top:none;
-      @media(max-width:500px){
-        width:100%;
-      }
-  
-  
-  
-  
-  @media(max-width:900px) and (min-width:500px) and (max-height:500px){
-  width:100%;
-  min-height:700px;
-  max-height:800px;
-  }
-  
-  
-  
-  @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
-  width:100%;
-  min-height:700px;
-  max-height:800px;
-  }
-  
-  `;
-  
-  
-  
-  
-  
-  const FormBox = styled.div`
-  display:flex;
-  color:azure;
-  width:500px;
-  min-height:500px;
-  max-height:750px;
-  flex-direction:row;
-  justify-content:center;
-  align-items:center;
-  margin:0;
-  paddinng:0;
-  grid-gap:20px;
-  background-color:rgba(0,0,0,.8);
-  box-shadow:0 0 10px #000;
-  border-radius:10px;
-  border-top-left-radius:0;
-  border-top-right-radius:0;
-  
-          @media screen and (max-width:500px){
-              width:100%;
-          }
-  `;
-  
-  
-  
-  const PageTitle = styled.h1`
-  font-size:5rem;
-    color:#000;
-  
-  
-  
-    font-family: ‘Roboto’, sans-serif;
-  font-family: ‘Playfair Display’, serif; 
-  
-  
-  
-              @media(max-width:500px){
-                display:none;
-              }
-  `;
-  
+    
+    
+    @media(max-width:1380px) and (min-width:700px) and (max-height:1380px) and (min-height:700px){
+grid-gap:0px;
+    
+    }
+
+        
+`;
+
+const PageTitle = styled.h1`
+font-size:5rem;
+  color:#000;
+
+
+
+  font-family: ‘Roboto’, sans-serif;
+font-family: ‘Playfair Display’, serif; 
+
+
+
+            @media(max-width:500px){
+              display:none;
+            }
+
+            @media(max-width:900px) and (min-width:500px) and (max-height:500px){
+              display:none;
+                
+
+
+            }
+`;
 
 // const Row = styled.div`
 // flex:1;
@@ -118,17 +142,17 @@ const Stylist = ({values,errors,touched,status}) =>{
     return(
               
        <Box>
-       <PageTitle>Signup Here</PageTitle>
+       <PageTitle>Login Here</PageTitle>
 
 <ul className="nav nav-tabs" id="myTab" role="tablist">
 <li className="nav-item">
-<NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" dataToggle="tab" role="tab" >Customer</NavLink>
+<NavLink to='/login/customer' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
 </li>
 <li className="nav-item">
-  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
+  <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign In</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Sign In</a>
 </li>
 </ul>
 
@@ -197,7 +221,15 @@ const StylistLogin = withFormik({
   }),
 
   handleSubmit(values, { setStatus, resetForm }) {
-    //wait for team...whether axios or what and also where to an with what?
+    Axios.post("https://haircare1backend.herokuapp.com/api/stylists/login",values)
+    .then(res=>{
+        setStatus(values)
+        resetForm()
+        console.log(res);
+        
+        
+    }) 
+  
   }
 })(Stylist);
 
