@@ -45,7 +45,7 @@ header {
         
 
         a {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             text-decoration: none;
             color: black;
             font-weight: 700;
@@ -144,6 +144,7 @@ header {
                 font-size: 1.7rem;
                 text-decoration: none;
                 color: black;
+                font-weight: 700;
 
                 &:hover {
                     text-decoration: underline;
