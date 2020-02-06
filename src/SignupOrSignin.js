@@ -23,11 +23,9 @@ border-top:none;
 
     @media(max-width:500px){
       width:100%;
-    margin-top:80px;
     overflow-y:auto;
     margin-top:100px;
-    padding-top:20px;
-      
+        grid-gap:100px
     }
 
 

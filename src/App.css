@@ -150,7 +150,9 @@ overflow: hidden;
 
 
 @media screen and (max-width:500px){
-            
+            .nav-tabs{
+              width:100%;
+            }
 
 
 .btnzz,.btnz{
