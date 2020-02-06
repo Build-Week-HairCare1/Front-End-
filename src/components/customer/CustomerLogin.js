@@ -150,12 +150,12 @@ const Customer = ({values,errors,touched,status}) =>{
         <Box>
         <PageTitle>Login Here</PageTitle>
  
- <ul className="nav nav-tabs" id="myTab" role="tablist">
+ <ul className="nav nav-tabs"  role="tablist">
  <li className="nav-item">
- <NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"   id="home-tab" datatoggle="tab" role="tab" >Customer</NavLink>
+ <NavLink to='/' className="nav-link"  exact activeClassName="customerORStylist"    role="tab" >Customer</NavLink>
  </li>
  <li className="nav-item">
-   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
+   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link"   role="tab"  > Stylist </NavLink>
  </li>
  <li className="nav-item">
    <a className="nav-link disabled" href="#" tabIndex="-1" >Sign In</a>
@@ -177,7 +177,7 @@ const Customer = ({values,errors,touched,status}) =>{
                 <p>{errors.email}</p>
                 )
             }
-            <span  id="emailHelp" className="form-text text-muted"></span>
+            <span  className="form-text text-muted"></span>
         </label>
                 </Row>
 
