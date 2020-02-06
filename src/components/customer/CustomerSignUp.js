@@ -206,7 +206,7 @@ const Customer = ({values,errors,touched,status}) =>{
   <NavLink to='/signup/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" dataToggle="tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" ariaDisabled="true">Sign Up</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" >Sign Up</a>
 </li>
 </ul>
 
@@ -219,20 +219,20 @@ const Customer = ({values,errors,touched,status}) =>{
                 <div className="form-group">
      <Row>
 
-                <label htmlFor="name"> 
-            <Field as="input" id="name" type="text" maxLength="10" name="name" ariaDescribedby="nameHelp" placeholder="First Name" className="form-control" required/>
+                <label htmlFor="first_name"> 
+            <Field as="input" id="first_name" type="text" maxLength="10" name="first_name" ariaDescribedby="nameHelp" placeholder="First Name" className="form-control" required/>
             {
-                touched.name && errors.name &&(
-                <p id="nameHelp" className="form-text text-muted">{errors.name}</p>
+                touched.first_name && errors.first_name &&(
+                <p id="nameHelp" className="form-text text-muted">{errors.first_name}</p>
                 )
             }
         </label>
 
-        <label htmlFor="last">
-            <Field as="input" id="last" type="text" maxLength="10" name="last"  ariaDescribedby="lastHelp"  placeholder="Last Name" className='form-control' required/>
+        <label htmlFor="last_name">
+            <Field as="input" id="last_name" type="text" maxLength="10" name="last_name"  ariaDescribedby="lastHelp"  placeholder="Last Name" className='form-control' required/>
             {
-                touched.last && errors.last &&(
-                <p  id="lastHelp" className="form-text text-muted">{errors.last}</p>
+                touched.last_name && errors.last_name &&(
+                <p  id="lastHelp" className="form-text text-muted">{errors.last_name}</p>
                 )
             }
         </label>
@@ -326,8 +326,8 @@ const CustomerSignUp = withFormik({
          
 
         return{
-            name:props.name || "" ,
-            last:props.last || "",
+            first_name:props.first_name || "" ,
+            last_name:props.last_name || "",
             email:props.email || "" ,
             password:props.password || "" ,
         }
@@ -337,11 +337,11 @@ const CustomerSignUp = withFormik({
 
     validationSchema: Yup.object().shape({
 
-        name: Yup.string().required(
+        first_name: Yup.string().required(
             "First Name Please..."
         ),
 
-        last: Yup.string().required(
+        last_name: Yup.string().required(
             "Last Name Please..."
         ),
      

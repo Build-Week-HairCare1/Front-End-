@@ -153,7 +153,7 @@ const Stylist = ({values,errors,touched,status}) =>{
   <NavLink to='/login/stylist'  exact activeClassName="customerORStylist"   className="nav-link" id="profile-tab" datatoggle="tab" role="tab"  > Stylist </NavLink>
 </li>
 <li className="nav-item">
-  <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Sign In</a>
+  <a className="nav-link disabled" href="#" tabIndex="-1" >Sign In</a>
 </li>
 </ul>
 
