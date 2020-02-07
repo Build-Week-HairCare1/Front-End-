@@ -32,18 +32,9 @@ const StylistProfile = props => {
         <h3 className="Experience">
           {data.years_experience}
         </h3>
-        <h2 className="Bio">
+        <h4 className="Bio">
           {data.bio}
-        </h2>
-        <h3 className="location">
-          {data.city}, {data.state}
-        </h3>
-        <h3 className="location">
-          {data.city}, {data.state}
-        </h3>
-        <h3 className="location">
-          {data.city}, {data.state}
-        </h3>
+        </h4>
       </div>
     </div>
   );

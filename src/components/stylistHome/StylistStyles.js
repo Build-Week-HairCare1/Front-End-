@@ -6,11 +6,14 @@ export const StylistStyles = createGlobalStyle`
 
 .app {
     background-image:none !important;
+    margin: 0 auto;
 }
 
 html {
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
+    background-image: none !important;
+    background-color: whitesmoke;
 }
 
 * {
@@ -67,9 +70,10 @@ header {
 //profile container
 
 .profile-container {
+    align-text: center ;
     border: 1px solid black;
     border-radius: 10px;
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
