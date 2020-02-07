@@ -6,10 +6,9 @@ export const getToken = () => {
 
 export const axiosWithAuth = () => {
   return axios.create({
-    baseURL: "",
+    baseURL: "https://basic-auth-vh.herokuapp.com",
     headers: {
-      "Content-Type": "application/json",
-      Authorization: getToken()
+      authorization: getToken()
     }
   });
 };

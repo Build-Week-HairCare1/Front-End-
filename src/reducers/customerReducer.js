@@ -20,7 +20,8 @@ const initialState = {
         stars: 0,
         stylist: "test stylist",
         customer: "test customer",
-        photo_url: ""
+        photo_url:
+          "https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1235&q=80"
       },
 
       {
@@ -30,7 +31,8 @@ const initialState = {
         stars: 3,
         stylist: "test stylist 2",
         customer: "test customer 2",
-        photo_url: ""
+        photo_url:
+          "https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1235&q=80"
       }
     ]
   }
@@ -75,7 +77,9 @@ export const customerReducer = (state = initialState, action) => {
         ...state,
         data: {
           ...state.data,
-          reviews: action.payload
+          reviews: state.data.reviews.filter(review => {
+            return review.id !== action.payload;
+          })
         },
         isFetching: false
       };

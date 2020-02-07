@@ -158,13 +158,14 @@ header {
 
 .dashboard-content {
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    // background: rgba(0, 0, 0, 0.6);
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     height: calc(100% - 40px);
+    // overflow-y: scroll;
 
     .no-reviews {
         align-self: center;
@@ -177,6 +178,7 @@ header {
         height: 42%;
         width: 18%;
         margin: 0 20px;
+        background: rgba(0, 0, 0, 0.6);
     }
 
     .card-info {
@@ -449,6 +451,8 @@ header {
     justify-content: flex-start;
     align-items: center;
     background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    border-radius: 10px;
 
     .row-container {
         width: 90%;
@@ -459,15 +463,17 @@ header {
 
         figure {
             border: 2px solid black;
-            width: 20%;
+            width: 25%;
             height: 90%;
             margin-right: 50px;
+            border-radius: 10px;
 
             img {
                 object-fit:cover;
                 object-position: center;
                 width: 100%;
                 height: 100%;
+                border-radius: 10px;
             }
         }
 

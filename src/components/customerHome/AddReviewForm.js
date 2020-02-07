@@ -50,8 +50,11 @@ const AddReviewForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(review);
     // addReview action will be here grabbing review object
+    addReview({
+      ...review,
+      id: `${Math.floor(Math.random() * 100)}${Math.floor(Math.random() * 100)}`
+    });
     props.history.push("/customer/home/");
   };
 

@@ -4,272 +4,235 @@
   text-align: center;
 }
 
-
-html{
-  width:100%;
-  height:100%;
-  -moz-background-size:cover;
-  -webkit-background-size:cover;
-  background-size:cover;
-  background-image:url("../src/hairsalon.jpg");
-  background-repeat:no-repeat;
-  background-position:center;
+html {
+  width: 100%;
+  height: 100%;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("../src/hairsalon.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: ‘Roboto’, sans-serif;
-font-family: ‘Playfair Display’, serif; 
-overflow-x: hidden;
-background-color: #000;
+  font-family: ‘Playfair Display’, serif;
+  overflow-x: hidden;
+  background-color: #000;
+  font-size: 62.5%;
 }
 
-#root{
-  position:absolute;
-  width:100%;
-  height:100%;
-  display:flex;
-
+#root {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
-.App{
-  width:100%;
-  height:100%;
+.App {
+  width: 100%;
+  height: 100%;
 }
-.App header{
-  width:100%;
-  height:auto;
-  display:flex;
-  justify-content:space-between;
-
+.App header {
+  width: 100%;
+  /* height: auto; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
-.logo{
-  flex:1;
-  width:100%;
-  height:100px;
-  font-family:'Playfair Display', serif;
-  text-align:left;
-}
-
-
-
-
-.logo #brand{
-   flex:1;
-   font-size:3rem;
+.logo {
+  /* flex: 1; */
+  /* width: 100%; */
+  width: 20%;
+  /* height: 100px; */
+  font-family: "Playfair Display", serif;
+  text-align: left;
 }
 
-.nav-tabs{
-  height:100%;
-  text-align:right;
-  background-color:rgba(0,0,0,.8);
-
-    z-index: 24;
- width:500px;
- border-radius:10px;
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
+.logo #brand {
+  flex: 1;
+  font-size: 4rem;
 }
 
+.nav-tabs {
+  height: 100%;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.8);
 
-.nav-link{
-  color:whitesmoke;
+  z-index: 24;
+  width: 500px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-
-
-.form-text{
-  -webkit-text-fill-color:#fff;
+.nav-link {
+  color: whitesmoke;
 }
 
+.form-text {
+  -webkit-text-fill-color: #fff;
+}
 
-
-.main-nav{
-  flex:1;
-  display:flex;
-  justify-content: flex-end;
-  align-items:flex-start;
-  grid-gap:50px;
+.main-nav {
+  /* flex: 1; */
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: space-evenly;
+  align-items: flex-start;
+  grid-gap: 50px;
   font-size: 2.5rem;
-  font-weight:bolder;
-  width:100%;
+  font-weight: bolder;
+  /* width: 100%; */
+  width: 20%;
   font-family: ‘Roboto’, sans-serif;
-  font-family: ‘Playfair Display’, serif; 
-  
+  font-family: ‘Playfair Display’, serif;
 }
 
-.loginInputs{
-  width:100%;
-  border:none;
+.loginInputs {
+  width: 100%;
+  border: none;
   background-color: rebeccapurple;
 }
 
-#home{
-  color:rgb(182, 45, 97);
+#home {
+  color: rgb(182, 45, 97);
 }
 
-#team{
-  color:#000;
-}
-
-#emailHelp{
-  font-size:.7rem;
-}
-
-.labez{
-  font-size: 2rem;
-}
-
-.btnz{
-  font-size: 3rem;
-  color:rgb(220, 35, 96);
-
-}
-.customerORStylist{
-  box-shadow:5px 0 5px whitesmoke;
-  color: whitesmoke;
-  font-weight:bolder;
-
-}
-
-
-.btnzz{
-  max-height:30px;
-  font-size:3rem;
-  font-weight:bolder;
-  color:#000;
-  border:none;
-  text-shadow:0 0 5px #000;
-  -webkit-text-fill-color:1px azure;
-}
-
-
-
-.btnz{
-  max-height:30px;
-  font-size:3rem;
-  font-weight:bolder;
-  color:#000;
-  border:none;
-  text-shadow:0 0 5px #000;
-  -webkit-text-fill-color:1px azure;
-}
-
-.btnzz:hover,.btnz:hover{
+#team {
   color: #000;
 }
 
-.btnzzActive{
-  color:red;
-  -webkit-text-stroke:.5px #fff;
+#emailHelp {
+  font-size: 0.7rem;
 }
 
-form{
-  z-index:24;
-}
-@media screen and (max-width:500px){
-           
-  html{
-    background-size:cover;
-    overflow: hidden;
-  }
-  
-
-  #root{
-    overflow-y:scroll;
-  }
-  
-  
-  .nav-tabs{
-              width:100%;
-            }
-
-
-.btnzz,.btnz{
+.labez {
   font-size: 2rem;
 }
 
-
-
-.logo #brand{
-  flex:1;
-  font-size:2rem;
+.btnz {
+  font-size: 3rem;
+  color: rgb(220, 35, 96);
+}
+.customerORStylist {
+  box-shadow: 5px 0 5px whitesmoke;
+  color: whitesmoke;
+  font-weight: bolder;
 }
 
-
-.main-nav{
- 
-  grid-gap:50px;
-  font-size: 1rem;
- 
-  
+.btnzz {
+  max-height: 30px;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #000;
+  border: none;
+  text-shadow: 0 0 5px #000;
+  -webkit-text-fill-color: 1px azure;
 }
 
+.btnz {
+  max-height: 30px;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #000;
+  border: none;
+  text-shadow: 0 0 5px #000;
+  -webkit-text-fill-color: 1px azure;
 }
 
-@media screen and (max-width:900px) and (min-width:500px)
-and (max-height:500px){
-        
-   
-
-form{
-  padding:0;
-  margin-bottom:200px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
-  .labez{
-    font-size:1rem;
-  }
-  .nav-tabs{
-    width:100%;
-
-  }
-  #root{
-    height:1000px;
-  }
-
-  .App{
-
-  }
-          
-
-
-  .btnzz,.btnz{
-  }
-  
-  
-  
-  .logo #brand{
-    flex:1;
-    font-size:2rem;
-  }
-  
-  
-  .main-nav{
-   
-    grid-gap:50px;
-    font-size: 1.5rem;
-   
-    
-  }
-
-  form{
-    font-size:1rem;
-  }
-
+.btnzz:hover,
+.btnz:hover {
+  color: #000;
 }
 
+.btnzzActive {
+  color: red;
+  -webkit-text-stroke: 0.5px #fff;
+}
 
-
-
-@media screen and (max-width:1380px) and (max-height:1380px) and (min-height:700px) and (min-width:700px){
-  html{
-    background-size:cover;
+form {
+  z-index: 24;
+}
+@media screen and (max-width: 500px) {
+  html {
+    background-size: cover;
     overflow: hidden;
   }
-  
-form{
-  z-index:24;
+
+  #root {
+    overflow-y: scroll;
+  }
+
+  .nav-tabs {
+    width: 100%;
+  }
+
+  .btnzz,
+  .btnz {
+    font-size: 2rem;
+  }
+
+  .logo #brand {
+    flex: 1;
+    font-size: 2rem;
+  }
+
+  .main-nav {
+    grid-gap: 50px;
+    font-size: 1rem;
+  }
 }
-  #root{
-    overflow-y:scroll;
+
+@media screen and (max-width: 900px) and (min-width: 500px) and (max-height: 500px) {
+  form {
+    padding: 0;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .labez {
+    font-size: 1rem;
+  }
+  .nav-tabs {
+    width: 100%;
+  }
+  #root {
+    height: 1000px;
+  }
+
+  .App {
+  }
+
+  .btnzz,
+  .btnz {
+  }
+
+  .logo #brand {
+    flex: 1;
+    font-size: 2rem;
+  }
+
+  .main-nav {
+    grid-gap: 50px;
+    font-size: 1.5rem;
+  }
+
+  form {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1380px) and (max-height: 1380px) and (min-height: 700px) and (min-width: 700px) {
+  html {
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  form {
+    z-index: 24;
+  }
+  #root {
+    overflow-y: scroll;
   }
 }

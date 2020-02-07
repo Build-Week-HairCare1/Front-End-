@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
 // rating from material ui
 import { Rating } from "@material-ui/lab";
@@ -12,7 +13,7 @@ import { Widget } from "@uploadcare/react-widget";
 
 const EditReviewForm = props => {
   const history = useHistory();
-  const { reviewToEdit } = props;
+  const { reviewToEdit, editReview } = props;
   const initialFormState = {
     title: "",
     description: "",
@@ -45,10 +46,8 @@ const EditReviewForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(review);
-    // addReview action will be here grabbing review object
-    // editReview(review);
-    // props.history.push("/customer/home/");
+    editReview(review);
+    props.history.push("/customer/home/");
   };
 
   return (
@@ -144,4 +143,4 @@ const EditReviewForm = props => {
   );
 };
 
-export default EditReviewForm;
+export default connect(null, { editReview })(EditReviewForm);

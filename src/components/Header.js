@@ -13,14 +13,35 @@ const Header = () => {
         <span id="brand">Hair+Care</span>
       </div>
 
-      {/* <nav>{token ? <NavLink>Logout</NavLink> : <NavLink>Log In</NavLink>}</nav> */}
       <nav className="main-nav">
-        <a href="" id="home" className="special">
-          Home
-        </a>
-        <a href="" id="team">
-          Team
-        </a>
+        {token ? (
+          <>
+            <Link
+              className="special"
+              id="home"
+              to="https://marketing-page-8ak0ddnz1.now.sh/"
+            >
+              Home
+            </Link>
+            <Link to="/logout">Logout</Link>
+          </>
+        ) : (
+          <>
+            <Link
+              className="special"
+              id="home"
+              to="https://marketing-page-8ak0ddnz1.now.sh/"
+            >
+              Home
+            </Link>
+            <Link
+              id="team"
+              to="https://marketing-page-8ak0ddnz1.now.sh/team.html"
+            >
+              Team
+            </Link>
+          </>
+        )}
       </nav>
     </header>
   );

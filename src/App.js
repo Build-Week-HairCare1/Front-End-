@@ -10,8 +10,8 @@ import Logout from "./components/Logout";
 import StylistHome from "./components/StylistHome";
 import CustomerHome from "./components/CustomerHome";
 import SignUp from "./components/SignUp";
-import Question from './SignupOrSignin';
-
+import Question from "./SignupOrSignin";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -23,10 +23,9 @@ function App() {
       {/* <SignUp />*/}
       {/* Private Route */}
 
-
       <Switch>
         <Route path="/stylist/home" component={StylistHome} />
-        <Route path="/customer/home" component={CustomerHome} />
+        <PrivateRoute path="/customer/home" component={CustomerHome} />
         <Route path="/logout" component={Logout} />
         <Route path="/" component={Question} />
       </Switch>
