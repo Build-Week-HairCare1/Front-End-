@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { getToken } from "../axiosWithAuth";
 
 const Header = () => {
-  const token = getToken();
-
   return (
     <header>
       <div className="logo">
@@ -14,32 +12,32 @@ const Header = () => {
       </div>
 
       <nav className="main-nav">
-        {token ? (
+        {getToken() ? (
           <>
-            <Link
+            <a
               className="special"
               id="home"
-              to="https://marketing-page-8ak0ddnz1.now.sh/"
+              href="https://marketing-page-8ak0ddnz1.now.sh/"
             >
               Home
-            </Link>
+            </a>
             <Link to="/logout">Logout</Link>
           </>
         ) : (
           <>
-            <Link
+            <a
               className="special"
               id="home"
-              to="https://marketing-page-8ak0ddnz1.now.sh/"
+              href="https://marketing-page-8ak0ddnz1.now.sh/"
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               id="team"
-              to="https://marketing-page-8ak0ddnz1.now.sh/team.html"
+              href="https://marketing-page-8ak0ddnz1.now.sh/team.html"
             >
               Team
-            </Link>
+            </a>
           </>
         )}
       </nav>
